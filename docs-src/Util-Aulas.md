@@ -8,11 +8,11 @@
 Estudar lógica booleana e praticar; Introdução ao git com trabalho coletivo.
 
 - Handout/ Exercício:
-    - [Álgebra Booleana - 1](/Exercicio-Algebra-Booleana-1)
-    - [Álgebra Booleana - 2](/Exercicio-Algebra-Booleana-2)
+    - [Álgebra Booleana - 1](/Z01.1/Exercicio-Algebra-Booleana-1)
+    - [Álgebra Booleana - 2](/Z01.1/Exercicio-Algebra-Booleana-2)
 
 - Lab: 
-    - [Lab 2: GitHub](/A-Ambiente-Lab-2)
+    - [Lab 2: GitHub](/Z01.1/A-Ambiente-Lab-2)
 
 ## Aula 1
 
