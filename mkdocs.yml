@@ -3,15 +3,19 @@ theme:
   name: 'material'
   features:
     - tabs
+    - instant
   palette:
       primary: 'white'
       accent: 'pink'
 
 docs_dir: 'docs-src'
+
+site_url: https://insper.github.io/Z01.1/
+edit_uri: 'edit/docs/docs-src/'
+
 repo_name: 'Insper/Z01.1'
 repo_url: 'https://github.com/insper/Z01.1'
-edit_uri: 'edit/docs/docs-src/'
-site_url: 'https://insper.github.io/Z01.1/'
+
 copyright: 'Copyright &copy; Rafael Corsi @ insper'
 
 nav:
