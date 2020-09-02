@@ -55,29 +55,35 @@ function setButDoneOld(but) {
   but.className = "button0 buttonDone";
 }
 
+var url = window.location.href;
 function progressBut(button_id) {
-  var usrname = checkCookie();
-  var url = window.location.href;
-  var but = document.getElementById(button_id);
-  var text = but.firstChild;
-  if (usrname != "" && text.data == "Cheguei Aqui!"){
-    setButDone(but);
-    setCookie(url+button_id, 'true', 365);
+    var usrname = checkCookie();
+    var but = document.getElementById(button_id);
+    var text = but.firstChild;
 
-    f = new FormData();
-    f.append('name', usrname);
-    f.append('time', new Date());
-    f.append('id', button_id);
-    f.append('url', url);
-    fetch(scriptURL, { method: 'POST', body: f})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message));
-  } else {
-    setButNameError(but);
-  }
+    if (usrname != "" && text.data != "Progresso já reportado!"){
+      confetti(but)
+      setButDone(but);
+      setCookie(url+button_id, 'true', 365);
+
+      f = new FormData();
+      f.append('name', usrname);
+      f.append('time', new Date());
+      f.append('id', button_id);
+      f.append('url', url);
+      fetch(scriptURL, { method: 'POST', body: f})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message));
+    } else if (text.data == "Progresso já reportado!") {
+      //pass
+    }
+    else {
+      setButNameError(but);
+    }
 }
 
-var buttons = document.getElementsByClassName( "button0");
+var buttons = document.getElementsByClassName("button0");
+
 for ( var i = 0; i < buttons.length; i++) {
   var but = buttons[i];
   var isTrue = getCookie(url+but.id);
