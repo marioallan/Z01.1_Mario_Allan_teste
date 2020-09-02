@@ -249,8 +249,14 @@ Vamos usar o componente [7404](https://pt.wikipedia.org/wiki/TTL_7404) que possu
 Implemente a equação que foi realizada com transistores só que agora com CIs da família 74xx.
 
 ```
-Q = A.(A.(A+B)+A.C)
+Q = (A xor B) or not(C)
 ```
+
+!!! tip
+    1. Identifique os componentes
+    1. Procure na [lista](https://pt.wikipedia.org/wiki/Lista_dos_circuitos_integrados_da_s%C3%A9rie_7400) qual o seu nome
+    1. Analise os pinos desse componente
+    1. Faça a ligação e teste por parte
 
 <button class="button0" id="6:ci-equacao" onClick="progressBut(this.id);">Cheguei Aqui!</button>
 
