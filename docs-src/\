@@ -103,36 +103,8 @@ Supondo que possuímos um binário de três dígitos, um contador de `0` a `7` e
     ```
     hex      bin      dec
     0x100 != 0b100 != 100
-      ```
+    ```
    
-<div id="quiz-result" class="card">
-  Você acertou <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span id="quiz-max-score"></span><br/>
-</div>
-    
-!!! question "Quiz 1 - base 2"
-     <div id="quiz-1">
-            <!-- Question 1 -->
-            <div class="card quizlib-question">
-                <div class="quizlib-question-title">1. Quanto que é 0b00110 em decimal?</div>
-                <div class="quizlib-question-answers">
-                    <input type="text" name="">
-                </div>
-            </div>
-            <!-- Question 2 -->
-            <div class="card quizlib-question">
-                <div class="quizlib-question-title">2. Converta 15 de decimal para binário</div>
-                <div class="quizlib-question-answers">
-                    <ul>
-                        <li><label><input type="radio" name="q2" value="a"> 0015</label></li>
-                        <li><label><input type="radio" name="q2" value="b"> 1111</label></li>
-                        <li><label><input type="radio" name="q2" value="c"> 1110</label></li>
-                        <li><label><input type="radio" name="q2" value="d"> 1101</label></li>
-                    </ul>
-                </div>
-            </div>
-            <button type="button" onclick="showResults(this.parentNode.id);">Verificar resposta</button>
-      </div> 
-    
 ### Definições
 
 Em muitas linguagens de programação é necessário definirmos o tamanho da variável que iremos armazenar um dado, para facilitar o entendimento damos nome a quantidade de bits que ela irá ocupar: 
@@ -186,7 +158,7 @@ Um contador no formato hexadecimal possui a seguinte forma:
 
 <iframe width="864" height="486" src="https://www.youtube.com/embed/SU0HpCAkIxY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-A conversão de número na base 16 para a base 2 e vice-versa acontece de forma trivial. Da base 2 para a base 16 basta separar os bits da palavra em unidades de 4 casas e então realizar a conversão de cada grupo de 4 bits para o seu equivalente em Hexa. Para a conversão de hexa para binário, basta converter cada símbolo de hexa para o seu equivalente em binário (4 dígitos), seguindo a tabela anterior.
+A conversão de número na base 16 para a base 2 e vice versa acontece de forma trivial. Da base 2 para a base 16 basta separar os bits da palavra em unidades de 4 casas e então realizar a conversão de cada grupo de 4 bits para o seu equivalente em Hexa. Para a conversão de hexa para binário, basta converter cada símbolo de hexa para o seu equivalente em binário (4 dígitos), seguindo a tabela anterior.
 
 Exemplos:
 
@@ -212,7 +184,7 @@ b) `0b1111_0101_1000` para hexa:
       -> 0xF58
 ```
 
-### Base 16 <--> Base 10
+### Base 16 <-> Base 10
 
 <iframe width="864" height="486" src="https://www.youtube.com/embed/0yAst89n0rM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -229,7 +201,7 @@ a) 0x10A para decimal:
    -> 10.256 + 0 + 1.16 = 2576
 ```
 
-Para alterar a base de Decimal para Hexa, uma das soluções mais triviais é a de converter primeiro para binário e então agrupar os bits de 4 em 4 e converter para hexa:
+Para converter de Decimal para Hexa, uma das soluções mais triviais é a de converter primeiro para binário e então agrupar os bits de 4 em 4 e converter para hexa:
 
 ```
    Decimal -> Binário -> Hexa
@@ -287,7 +259,7 @@ O sistema octal é utilizado no Linux para permissões de arquivos onde são nec
 | execute only            | --x |    001 |     1 |
 | none                    | --- |    000 |     0 |
 
-Para modificar a permissão de um arquivo no linux é necessário fornecer a informação para três grupos diferentes: `usuário`, grupos na qual o usuário faz parte e qualquer outro user. Para isso basta escrever no terminal: 
+Para modificar a permisão de um arquivo no linux é necessário fornecer a informação para três grupos diferentes: `usuário`, grupos na qual o usuário faz parte e qualquer outro user. Para isso basta escrever no terminal: 
 
 ```
             / others
@@ -306,7 +278,7 @@ Isso da permissão de:
 
 
 !!! tip "Povos"
-    Alguns povos da América do Norte, México e Europa utilizam o sistema octal, pois consideram a quantidade dos vãos dos dedos e não os dedos propriamente.
+    Alguns povos da América do norte, Mexico e Europa utilizam o sistema octal pois consideram a quantidade dos vãos dos dedos, e não os dedos.
     
     > Fonte: https://en.wikipedia.org/wiki/Octal#By_Native_Americans
 
@@ -336,6 +308,8 @@ No sistema [Binary-coded decimal (BCD)](https://pt.wikipedia.org/wiki/Codifica%C
 
 ### ASCII
 
+
+
 [ASCII](https://pt.wikipedia.org/wiki/ASCII) (do inglês American Standard Code for Information Interchange; "Código Padrão Americano para o Intercâmbio de Informação") é uma maneira de codificar em binário (8 bits) 95 sinais gráficos (letras, símbolos e números) e alguns sinais de controle. É muito utilizada pelos programas para armazenarem 'caracteres' e 'strings'. 
 
 [![](http://www.asciitable.com/index/asciifull.gif)](http://www.asciitable.com)
@@ -347,4 +321,3 @@ Por exemplo, a palavra Insper convertido para ASCII fica da seguinte maneira (em
 ![](figs/Teoria/Dados-ascii.svg){width=500}
 
 <iframe width="900" height="506" src="https://www.youtube.com/embed/zB85kTs-sEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
