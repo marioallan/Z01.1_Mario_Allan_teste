@@ -107,7 +107,7 @@ nav:
 - 'Estudo':
   - 'Exercicio-Algebra-Booleana-1.md'
   - 'Exercicio-Algebra-Booleana-2.md'
-  - 'Exercicio-Dados-1.md'
+  - 'Dados Digitais - 1': 'https://docs.google.com/spreadsheets/d/1rN_zQqYaVI8PjAhKqEBCmY-_06I0X9dD0RddcI-miJs/edit?usp=sharing'
   - 'Exercicio-Dados-2.md'
   - 'Handout Aritmetica Booleana': 'https://github.com/Insper/Z01.1/blob/master/Exercicios/Exercicio-Aritmetica-Booleana.pdf'
   - 'Lógica Sequencial - 1': 'https://forms.gle/XMsFCDMYsmz1qUP86'
@@ -134,11 +134,14 @@ nav:
 
 extra_css:
   - css/progress.css
+  - css/quizlib.css
 
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
   - 'js/dom-confetti.js'
   - 'js/progress.js'
+  - 'js/quizlib.js'
+  - 'js/quizes.js'
   - 'translate_admonitions.js'
 
 plugins:
