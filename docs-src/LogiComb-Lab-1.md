@@ -1,25 +1,25 @@
 # Lab 4: FPGA - VHDL
 
-!!! linux
-    Usar o Linux fornecido!
+!!! note ""
 
-!!! note "Trabalhando em grupo"
-    Realizar o resto o lab em dupla
+|  |   | 
+|---| ---|
+|![](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png){width=100} | Usar o Linux fornecido |
 
-Esse laboratório é introdutório para o desenvolvimento do projeto ([`B-Lógica-Combinacional`](/LogiComb-Projeto)), onde iremos criar os bloquinhos de hardware que serão os tijolos de nosso computador. Primeiro precisamos praticar um pouco de VHDL e entender a ferramenta de compilação e programação (Quartus).
+Esse laboratório é introdutório para o desenvolvimento do projeto ([`B-Lógica-Combinacional`](/Z01.1/LogiComb-Projeto)), onde iremos criar componentes de hardware que serão os alicerces do nosso computador. Primeiro precisamos praticar um pouco de VHDL e entender a ferramenta e o fluxo de compilação, teste e programação (Quartus).
 
-Após essa etapa, iremos começar o desenvolvimento do projeto, programando os módulos que virão a ser utilizados no computador Z01 (Lab-5).
+Após essa etapa, iremos começar o desenvolvimento do projeto, programando os módulos que virão a ser utilizados no computador Z01 (próximo lab).
 
 ## Antes de começar
 
-Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: [`Util/Começando novo Projeto`](https://insper.github.io/Z01.1/Util-Comecando-novo-projeto/) e depois voltar para esse lab.
+Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: [`Util/Começando novo Projeto`](/Z01.1/Util-Comecando-novo-projeto/) e depois voltar para esse lab.
 
 !!! warning
     Não seguir sem realizar a etapa anterior.
 
 ## Entendendo a estrutura de pastas dos projetos
 
-A pasta do projeto B (`LogicaCombinacional`) no repositório Z01 possui a seguinte estrutura (assim como todos os demais projetos): 
+A pasta do projeto `B-LogicaCombinacional` no repositório Z01 possui a seguinte estrutura (assim como todos os demais projetos): 
 
 ```
 /B-LogicaCombinacional
@@ -34,7 +34,7 @@ A pasta do projeto B (`LogicaCombinacional`) no repositório Z01 possui a seguin
             *.vhd
 ```
 
-1. `Quartus`: Projeto Quartus que faz uso dos arquivos VHDL localizados em src/rtl/*.vhd 
+1. `Quartus`: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/rtl/*.vhd` 
      - Serve para programar a **FPGA**
 1. `*.py`: Scripts em python automatiza a execução dos testes
 1. `src/rtl/*.vhd`: Arquivos VHDL que serão implementado pelo grupo

@@ -23,7 +23,7 @@ input[type="text"]  {
  outline: none;
 }
 
-button {
+button-quiz {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 4px;
@@ -39,10 +39,10 @@ button {
   border-radius: 3px;
   box-shadow: 0 3px 0 #05c;
 }
-button:hover {
+button-quiz:hover {
   background-color: #1e88e5;
 }
-button:active {
+button-quiz:active {
   box-shadow: 0 1px 3px 2px #1e88e5;
 }
 

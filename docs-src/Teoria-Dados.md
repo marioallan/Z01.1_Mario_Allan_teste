@@ -130,7 +130,7 @@ Supondo que possuímos um binário de três dígitos, um contador de `0` a `7` e
                     </ul>
                 </div>
             </div>
-            <button type="button" onclick="showResults(this.parentNode.id);">Verificar resposta</button>
+            <button type="button-quiz" onclick="showResults(this.parentNode.id);">Verificar resposta</button>
       </div> 
     
 ### Definições
