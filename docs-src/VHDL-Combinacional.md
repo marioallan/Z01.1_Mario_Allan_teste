@@ -86,7 +86,11 @@ O hardware gerado pela descrição anterior seria:
     Utilizar `others` na última opção!
 
 !!! tip
-    Precisamos lembrar que no final tudo vai virar um hardware, o `with` é normalmente interpretado como um `mux`!
+    Precisamos lembrar que no final tudo vai virar um hardware, o `with` é normalmente utilizado para implementar um **multiplexiador**!
+    
+!!! note "Multiplexador"
+    <iframe width="450" height="350" src="https://www.youtube.com/embed/FKvnmxte98A?list=PLbjtMHXGxHYisNnX3pErFxnR9kcu7Nh7q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 
 ### when else
 

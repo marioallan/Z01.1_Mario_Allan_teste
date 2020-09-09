@@ -1,14 +1,19 @@
 # Lab 4: FPGA - VHDL
 
-!!! note ""
+!!! success "2020-2"
+    Material atualizado.
 
-|  |   | 
-|---| ---|
-|![](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png){width=100} | Usar o Linux fornecido |
+!!! info "Individual"
+    Esse laboratório é para ser realizado em dupla/trio.
+
+!!! note "Linux"
+    ![](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png){width=50} Usar o Linux fornecido.
 
 Esse laboratório é introdutório para o desenvolvimento do projeto ([`B-Lógica-Combinacional`](/Z01.1/LogiComb-Projeto)), onde iremos criar componentes de hardware que serão os alicerces do nosso computador. Primeiro precisamos praticar um pouco de VHDL e entender a ferramenta e o fluxo de compilação, teste e programação (Quartus).
 
 Após essa etapa, iremos começar o desenvolvimento do projeto, programando os módulos que virão a ser utilizados no computador Z01 (próximo lab).
+
+<button class="button0" id="0:comecando" onClick="progressBut(this.id);">Começando laboratório!</button>
 
 ## Antes de começar
 
@@ -17,51 +22,53 @@ Toda vez que um novo projeto começar será necessário realizar algumas configu
 !!! warning
     Não seguir sem realizar a etapa anterior.
 
+<button class="button0" id="1:comencando-novo-projeto" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
 ## Entendendo a estrutura de pastas dos projetos
 
 A pasta do projeto `B-LogicaCombinacional` no repositório Z01 possui a seguinte estrutura (assim como todos os demais projetos): 
 
 ```
 /B-LogicaCombinacional
-    testeLogicaCombinacional.py
-    /Quartus
-    /src
-        /rtl
-            *.vhd
-    /tests
-        config.txt
-        /tst
-            *.vhd
+  testeLogicaCombinacional.py
+  /Quartus
+  /src
+    *.vhd
+  config_testes.txt
+  /testes
+    *.vhd
 ```
 
 1. `Quartus`: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/rtl/*.vhd` 
      - Serve para programar a **FPGA**
 1. `*.py`: Scripts em python automatiza a execução dos testes
-1. `src/rtl/*.vhd`: Arquivos VHDL que serão implementado pelo grupo
-1. `tests/tst/*.vhd`: Arquivos VHDL que realizam teste lógico nos arquivos do rtl
-1. `tests/config.txt`: Configuração dos testes
+1. `src/*.vhd`: Arquivos VHDL que serão implementado pelo grupo
+1. `config_testes.txt`: Configuração dos testes
+1. `testes/*.vhd`: Arquivos VHDL que realizam teste lógico nos arquivos do rtl
 
 ## Abrindo o Quartus
 
 !!! linux
-    Se não encontrar o software abra o terminal e escreva `quartus` :arrow_right: `enter`.
+    Se não encontrar o software na barra de tarefas, abra o terminal e escreva `quartus` :arrow_right: `enter`.
 
-Abra o software do  `Quartus` ![](figs/LogiComb/quartusIcon.png){ width=30px} e clique em `File` :arrow_right: `Open Project` :arrow_right: escolha o projeto localizado na pasta `B-LogicaCombinacional/Quartus`.
-
-O arquivo que o Quartus irá reconhecer é o: `DE0_CV_Default.qpf` como no gif a seguir:
+Abra o software do `Quartus` ![](figs/LogiComb/quartusIcon.png){width=30px} e clique em `File` :arrow_right: `Open Project` :arrow_right: escolha o projeto localizado na pasta `B-LogicaCombinacional/Quartus`. O arquivo que o Quartus irá reconhecer é o: `DE0_CV_Default.qpf` como no gif a seguir:
 
 ![Abrindo o Quartus](figs/LogiComb/Quartus1.gif)
 
 Abra o arquivo `TopLevel.vhd` como demonstrado no gif anterior, este arquivo é o que chamamos de [top level](https://www.xilinx.com/support/documentation/sw_manuals/xilinx10/isehelp/pfp_p_toplevelhdl.htm) (pode-se fazer uma analogia com o `main` de um código), ele será o primeiro a ser executado na compilação e utilizará os demais módulos do sistema.
 
+<button class="button0" id="2:abrindo-o-quartus" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
 ### Compilando o código
 
 !!! note
-    O código original disponível não realiza nenhuma lógica. Note que sua arquitetura está vazia!
+    O código original disponível não realiza nenhuma lógica, repare que sua arquitetura está vazia!
 
 Para compilarmos esse código VHDL basta irmos em: `Processing` :arrow_right: `Start Compilation`. A ferramenta irá "realizar" o código, ou seja, interpretar e torna-lo um hardware.
 
 ![Compilando](figs/LogiComb/Quartus2.gif)
+
+<button class="button0" id="3:compilando" onClick="progressBut(this.id);">Cheguei Aqui!</button>
 
 ### RTL View
 
@@ -71,7 +78,7 @@ Podemos gerar a visão [RTL](https://en.wikipedia.org/wiki/Register-transfer_lev
 
 Ele irá gerar o diagrama a seguir:
 
-![Compilando](figs/LogiComb/Quartus3.png)
+![Compilando](figs/LogiComb/Quartus3.png){width=450}
 
 Onde podemos analisar que não existe nenhuma lógica que relaciona entrada com saída.
 
@@ -79,11 +86,13 @@ Onde podemos analisar que não existe nenhuma lógica que relaciona entrada com 
     O RTL aqui tem outro significado de quando foi utilizado com transistores, aqui é **Register-transfer level** e nos transistores é **Resistor–transistor logic**.
 
 !!! tip 
-    Iremos utilizar bastante o RTL.
+    Iremos utilizar bastante o RTL, aprenda a gerar e a interpretar! 
+
+<button class="button0" id="4:rtl-view" onClick="progressBut(this.id);">Cheguei Aqui!</button>
 
 ### Modificando o projeto
 
-Vamos modificar o arquivo `toplevel.vhd` do projeto adicionando que o `bit 0` do vetor `LEDR` seja igual ao `bit 0` da chave SW, o vhdl deve ficar como a seguir:
+Vamos modificar o arquivo `toplevel.vhd` do projeto para que o `bit 0` do vetor `LEDR` seja igual ao `bit 0` da chave `SW`, a arquitetura deve ficar como a seguir:
 
 ```vhdl
 ---------------
@@ -103,41 +112,89 @@ end rtl;
 
 O resultado deve ser o seguinte:
 
-![Compilando](figs/LogiComb/Quartus-rtl2.png)
+![Compilando](figs/LogiComb/Quartus-rtl2.png){width=450}
 
 Onde o valor do `LEDR0` será o próprio valor de entrada chave `SW0`.
 
-### Programando a FPGA
+??? info "Programando a FPGA: Para quem estiver no insper"
+    Essa etapa deve ser realizada somente para quem está 
+    presente no insper.
 
-![](figs/LogiComb/de0-cv.jpeg)
+    ![](figs/LogiComb/de0-cv.jpeg){wdith=10px}
 
-- Conectar via USB (não precisa da fonte)
-- Deve ligar, caso contrário apertar o botão vermelho
-- Verificar se a chave SW10 está em 'run'
+    Para programar a FPGA você deve:
+    
+    - Conectar a placa via USB (não precisa da fonte)
+    - Ligar a placa (botão vermelho)
+    - Verificar se a chave SW10 está em 'run'
 
-Para programar na FPGA conecte-a ao seu computador via cabo USB e vá em: `Tools` :arrow_right: `Programmer`. Ele deve abrir uma nova interface:
+    No quartus vá em `Tools` :arrow_right: `Programmer`. Ele deve abrir uma nova interface:
 
-![Programando](figs/LogiComb/quartus-pgr.gif)
+    ![Programando](figs/LogiComb/quartus-pgr.gif)
 
-!!! tip "Testando"
-    Brinque com a chave SW0 e note que o LED irá acender conforme a chave é colocada na posição on.
+    Mexa na chave SW0 e note que o LED irá acender conforme a chave é colocada na posição on.
+
+<button class="button0" id="5:modificando" onClick="progressBut(this.id);">Cheguei Aqui!</button>
 
 ## Exercícios
 
-Para cada desafio proposto a seguir, verifique se o RTL corresponde a lógica que deseja implementar. Após a verificação teste na programe e teste na FPGA:
+Para cada desafio proposto a seguir, verifique se o RTL corresponde a lógica que deseja implementar. Se estive no Insper teste o programa na FPGA:
 
 1. Compile
 1. Verifique o RTL
-1. Programe a FPGA
+1. Programe a FPGA (se estiver no insper)
     
+!!! tip
+    valide analisando o RTL ou programando a placa.
+
+<button class="button0" id="6:exe1" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
 !!! example "Tarefa"
     Faça a saída `LEDR(0)` ser o inverso da entrada `SW(0)`
+
+<button class="button0" id="7:exe2" onClick="progressBut(this.id);">Cheguei Aqui!</button>
 
 !!! example "Tarefa" 
     Faça a saída `LEDR(0)` ser a entrada `SW(0) ou SW(1)`
 
+<button class="button0" id="8:exe3" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
 !!! example "Tarefa"
-    Faça a saída `LEDR(0)` ser a entrada `SW(0) ou SW(1)` e o `LEDR(1)` ser a chave `SW(1)`
+    Faça:
+    
+    - `LEDR(0)` ser a entrada `SW(0) ou SW(1)` 
+    - `LEDR(1)` ser a chave `SW(1)`
+
+<button class="button0" id="9:exe4" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
+!!! example "Tarefa"
+    Faça TODOs os LEDs acenderem quando a seguinte combinação de entrada for:
+  
+    ```
+    SW9               SW0
+      1 0 0 1 1 0 1 0 1 0
+    ```
+
+<button class="button0" id="10:exe5" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
+!!! example "Tarefa"
+    Escreva um código VHDL para implementar o circuito a seguir:
+
+    ![Circuito](figs/LogiComb/circuito.png){width=450}
+
+    Sendo:
+
+    - X: chave 0 (SW(0))
+    - y: chave 1 (SW(1))
+    - z: chave 2 (SW(2))
+
+    **Dica:** encontre a equação, implemente em VHDL.
+
+<button class="button0" id="11:exe6" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
+--------------------------
+
+## Sete segmentos
 
 Note que na nossa FPGA possuímos seis [displays de sete segmentos](https://en.wikipedia.org/wiki/Seven-segment_display). 
 
@@ -155,18 +212,20 @@ entity TopLevel is
 end entity;
 ```
 
-Agora com um display de 7segementos mapeado como saída (`out`) na nossa `entity` podemos acionar cada led do display como descrito no manual da placa (isso só é possível pois o projeto já foi configurado corretamente antes pelo seu professor):
+Agora com um display de 7segementos mapeado como saída (`out`) na nossa `entity` podemos acionar cada led do display como descrito no manual da placa (isso só é possível pois o projeto já foi configurado corretamente antes pelo seu professor).
 
-![](figs/LogiComb/7seg-manual.png)
+![](figs/LogiComb/7seg-manual.png){width=450}
 
 !!! tip
     Para acender um segmento é necessário colocar `0` e para apagar `1`.
 
 !!! example "Tarefa"
-
     1. Modifique a `entity` para possuir a nova saída
     1. Faça aparecer o número `5` no `HEX0`.
 
+<button class="button0" id="12:7seg" onClick="progressBut(this.id);">Cheguei Aqui!</button>
+
+<!--
 ## Adicionando um novo componente ao projeto
 
 O desenvolvimento de projetos de hardware assim como os de softwares devem ser feitos de forma modular, onde especifica-se e implementa-se pequenos módulos (entidades) que são combinadas em sistemas cada vez mais complexos até chegar ao `TopLevel`. 
@@ -178,7 +237,7 @@ Para usarmos um novo componente no projeto é necessário:
 
 ### binário para BCD
 
-Vamos inserir no `toplevel` um componente que faz a conversão de números binários para `BCD`, esse componente já está implementando e se encontra na pasta `B-LogicaCombinacional/src/rtl/` junto com outros módulos: 
+Vamos inserir no `toplevel` um componente que faz a conversão de números binários para `BCD`, esse componente já está implementando e se encontra na pasta `B-LogicaCombinacional/src/` junto com outros módulos: 
 
 - And16.vhd
 - Mux8Way.vhd
@@ -199,20 +258,19 @@ entity binary_bcd is
 end binary_bcd ;
 ```
 
-Esse módulo que possui como interfaces principais: um vetor de entrada `binary_in` e cinco saídas (`bcd0` .. `bcd5`) e implementa um conversor de binário para BCD. 
+Esse módulo possui as seguintes interfaces: um vetor de entrada `binary_in` e cinco saídas (`bcd0` .. `bcd5`) e implementa um conversor de binário para BCD. 
 
 !!! note "clock e rst"
-    Note que esse componente possui outras duas entradas: `clk` e `reset`, isso é necessário pois ele é um componente sequencial (ainda não vimos isso).
+    Além das portas descritas anteriormente, esse componente possui outras duas entradas: `clk` e `reset`, isso é necessário pois ele é um componente sequencial (ainda não vimos isso).
 
 ### Inserindo `binarioToBcd` no projeto
 
 Para inserirmos o componente no projeto devemos:
 
 - no `quartus` :arrow_right: `Project` :arrow_right: `Add/Remove files in Project`. 
-Uma nova janela deve aparecer, nela clicar em `File name ...` e procurar pelo arquivo `binarioToBcd.vhd` que está na pasta `src/rtl` um nível a cima. Ao final, clicar em `apply`.
+Uma nova janela deve aparecer, nela clicar em `File name ...` e procurar pelo arquivo `binarioToBcd.vhd` que está na pasta `src/` um nível a cima. Ao final, clicar em `apply`.
 
 ![](figs/LogiComb/quartus-add-file.gif)
-
 
 ### Usando no `toplevel` 
 
@@ -244,31 +302,11 @@ Compilando o projeto podemos analisar o RTL gerado:
 !!! example "Tarefa"
     1. Compile
     1. Gere o RTL e análise 
-    1. Programe a FPGA e teste
+    1. Programe a FPGA e teste (se estiver no insper)
     
-Você deve mudar as chaves SW e observar se os LEDs (3..0) e (7..4) estão acendendo corretamente.
+        - você deve mudar as chaves SW e observar se os LEDs (3..0) e (7..4) estão acendendo corretamente.
+        - Coloque a palavra 13 em binário nas chaves (1101) você deve obter: LED(3..0) = "0011" e os LED(7..4) = "0001".
 
-- dica: coloque a palavra 13 em binário, você deve obter: LED(3..0) = "0011" e os LED(7..4) = "0001".
+-->
 
-## Desafios extras
 
-Realize os seguintes desafios junto com o seu grupo, siga os passos anteriores para conseguir rodar na FPGA.
-
-!!! example "Tarefa"
-    Faça TODOs os LEDs acenderem quando a seguinte combinação de entrada for:
-  
-    ```
-    SW9               SW0
-      1 0 0 1 1 0 1 0 1 0
-    ```
-
-!!! example "Tarefa"
-    Faça um código VHDL para implementar o circuito a seguir:
-
-    ![Circuito](figs/LogiComb/circuito.png)
-
-    Sendo:
-
-    - X: chave 0 (SW(0))
-    - y: chave 1 (SW(1))
-    - z: chave 2 (SW(2))

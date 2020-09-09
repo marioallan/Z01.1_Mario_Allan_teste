@@ -1,9 +1,11 @@
 # Lab 1: Configurando Github
 
+!!! success "2020-2"
+    Material atualizado.
+
 Devemos começar a preparar o terreno para os projetos em grupo que estarão por vir, nessa etapa vocês devem montar um grupo de 5/6 colegas e dar um nome a ele (os grupos são nomeados por letras, a primeira letra do nome do seu grupo será fornecida pelo professor).
 
 O grupo irá trabalhar de forma colaborativa via a utilização do git/ github. É imprescindível que todos trabalhem dessa forma, pois será a maneira que iremos avaliar individualmente vocês. 
-
 
 !!! tip "Como trabalhar nesse lab"
     Entre no canal do seu grupo no teams, decida quem irá realizar 

@@ -1,6 +1,6 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxJTJIvfkJzTusu8PGkyP1aGmA7KSrKq8H4OiiQYSl9Lf6ZVM8/exec';
 const sDone = 'Cheguei Aqui!'
-const sReportado = 'Progresso já reportado!'
+const sReportado = 'Progresso reportado!'
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();

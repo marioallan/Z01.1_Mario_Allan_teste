@@ -1,5 +1,8 @@
 # port map
 
+Esse texto explica como realizar o `port map` em VHDL, técnica que permite o reaproveitamento
+de módulos e o desenvolvimento hierárquico.
+
 ## Desenvolvimento hierárquico
 
 É uma técnica de organização de projeto onde são desenvolvidos pequenos módulos e esses módulos fazem parte de um sistema maior, que por sua vez, fazem parte de algo muito mais complexo. As vantagens de um desenvolvimento desse tipo são:
@@ -38,9 +41,8 @@ Vamos ver como usar `port map` com um exemplo a seguir, nesse exemplo possuímos
        -------------------
 ```
 
-- `modulo1.vhd`
-
 ``` vhdl
+-- `modulo1.vhd`
 entity modulo1 is
   port (
      a,b : in  std_logic;
@@ -53,9 +55,8 @@ begin
 end architecture;
 ```
 
-- `modulo2.vhd`
-
 ``` vhdl
+-- `modulo2.vhd`
 entity modulo2 is
   port (
      i1,i2 : in  std_logic;
@@ -114,7 +115,6 @@ end architecture;
             u1: modulo1 port map (i1, i2, o1);
         ```
     - As vezes é necessário criarmos sinais (`signals`) para atribuirmos aos componentes
-        ```
 
 ## Video-Exemplo: Construindo um Adder de 4-bits usando FullAdder de 1-bit
 

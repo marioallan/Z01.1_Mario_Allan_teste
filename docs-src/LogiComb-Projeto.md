@@ -1,9 +1,12 @@
 # B - Lógica Combinacional
 
+!!! success "2020-2"
+    Material atualizado.
+
 ![](figs/LogiComb/sistema-comb.svg)
 
 !!! tip "Scrum Master"
-    Você é `Scrum Master` e não sabe por onde começar? De uma olhada nessas dicas: [Vixi! Sou Scrum Master](/Util-vixi-sou-scrum)
+    Você é `Scrum Master` e não sabe por onde começar? De uma olhada nessas dicas: [Vixi! Sou Scrum Master](/Z01.1/Util-vixi-sou-scrum)
 
 Esse projeto tem como objetivo trabalhar com portas lógicas e sistemas digitais combinacionais (sem um clock) em FPGA e VHDL. Os elementos lógicos desenvolvidos nessa etapa serão utilizados como elementos básicos para a construção do computador. 
 
@@ -49,20 +52,21 @@ A pasta do projeto C no repositório `Z01.1` possui a seguinte estrutura :
 
 ```
 /B-LogicaCombinacional
-    testeLogicaCombinacional.py
-    /Quartus
-    /src
-        /rtl
-            *.vhd
-    /tests
-        /tst
-            *.vhd
+  testeLogicaCombinacional.py
+  /Quartus
+  /src
+    *.vhd
+  config_testes.txt
+  /testes
+    *.vhd
 ```
 
-1. `Quartus`: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/rtl/*.vhd`
-1. `testeLogicaCombinacional.py`: Script em python que possibilita a execução dos testes
-1. `src/rtl/*.vhd`: Arquivos VHDL que serão implementado pelo grupo
-1. `tests/tst/*.vhd`: Arquivos VHDL que realizam teste lógico nos arquivos do rtl
+1. `Quartus`: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/rtl/*.vhd` 
+     - Serve para programar a **FPGA**
+1. `*.py`: Scripts em python automatiza a execução dos testes
+1. `src/*.vhd`: Arquivos VHDL que serão implementado pelo grupo
+1. `config_testes.txt`: Configuração dos testes
+1. `testes/*.vhd`: Arquivos VHDL que realizam teste lógico nos arquivos do rtl
 
 ### Executando o script de teste 
 
@@ -87,10 +91,10 @@ A entrega deve ser feita no ramo `master` do git.
 - [ ] Implementar acionamento do diplay de 7 segmentos e demonstrar na FPGA
 
 !!! note 
-    Esses arquivos estão localizados em `B-LogicaCombinacional/src/rtl/`
+    Esses arquivos estão localizados em `B-LogicaCombinacional/src/`
 
 !!! tip
-    Utilize o VScode para editar os arquivos vhdl e valide a implementação executando o script de testes.
+    Utilize o VScode para editar os arquivos em `vhdl` e valide a implementação executando o script de testes.
 
 Deve-se implementar os seguintes circuitos combinacionais: 
 
@@ -166,15 +170,14 @@ Deve-se implementar os seguintes circuitos combinacionais:
     - **Descrição**: Questão do display de sete segmentos da lista de exercícios [Álgebra Booleana 2](https://insper.github.io/Z01.1/Exercicio-Algebra-Booleana-2/)
 
 !!! tip "Display 7s"
-    Esse item é uma continuação do que foi realizado no [Lab4](/LogiComb-Lab-1/), onde vocês tiveram que exibir um valor constante no display de 7s. 
-    
-    Para cada segmento do display, vocês devem encontrar uma equação booleana que o represente, e então implementar em VHDL e testar na FPGA.
-
-- Vídeo
-    - O grupo deve apresentar um vídeo da FPGA mostrando nos display de 7 segmentos o seguinte:
-        - (C) O valor em hexadecimal da palavra binária formada pelas chaves SW(3 .. 0)
-        - (C) O valor em hexadecimal da palavra binária formada pelas chaves SW(9 .. 0)
-        - (B) O valor em decimal da palavra binária formada pelas chaves SW(9 .. 0)
+    1. Esse item é uma continuação do que foi realizado no [Lab4](/LogiComb-Lab-1/), onde vocês tiveram que exibir um valor constante no display de 7s. 
+    1. Para cada segmento do display, vocês devem encontrar uma equação booleana que o represente, e então implementar em VHDL e testar na FPGA.
+<!--
+- O grupo deve apresentar um vídeo da FPGA mostrando nos display de 7 segmentos o seguinte:
+    - (C) O valor em hexadecimal da palavra binária formada pelas chaves SW(3 .. 0)
+    - (C) O valor em hexadecimal da palavra binária formada pelas chaves SW(9 .. 0)
+    - (B) O valor em decimal da palavra binária formada pelas chaves SW(9 .. 0)
+-->
 
 ## Rubricas para avaliação do projeto
 
@@ -184,20 +187,20 @@ Cada integrante do grupo irá receber duas notas: Uma referente ao desenvolvimen
 
 Para atingir os objetivos A e B, deve-se antes atingir o C.
 
-| Conceito | Descritivo                                                             |
-|----------|------------------------------------------------------------------------|
-| **A**    | Exibe três dígitos em Decimal na FPGA                                  |
-| **B**    | Exibe três dígitos em Hexadecimal na FPGA                              |
-|          | (exibir até o valor 0x3FF = 2^10 - 1)                                  |
-| **C**    | Ter criado o project no github                                         |
-|          | O travis configurado e funcionando                                     |
-|          | Todos os módulos implementados e funcionado                            |
-|          | **Implementando um único display de 7s (conta até 16 em hexadecimal)** |
-| **D**    | Até dois Módulos com falha/ não apresentou o vídeo da FPGA             |
-| **I**    | Mais de três módulos com falha                                         |
+| Conceito | Descritivo                                                  |
+|----------|-------------------------------------------------------------|
+| **A**    | Exibe três dígitos em Decimal na FPGA                       |
+| **B**    | Exibe três dígitos em Hexadecimal na FPGA                   |
+|          | (exibir até o valor 0x3FF = 2^10 - 1)                       |
+| **C**    | Ter criado o project no github                              |
+|          | O travis configurado e funcionando                          |
+|          | Todos os módulos implementados e funcionado                 |
+|          | **Implementando um único display de 7s (conta de 0x0 0xF)** |
+| **D**    | Até dois Módulos com falha/ não apresentou o vídeo da FPGA  |
+| **I**    | Mais de três módulos com falha                              |
 
 ### Individual
 
 As rubricas a serem seguidas serão comuns a todos os projeto e está descrito no link:
 
-- [Rubricas Scrum e Desenvolvedor](/Sobre-Rubricas/)
+- [Rubricas Scrum e Desenvolvedor](/Z01.1/Sobre-Rubricas/)
