@@ -1,16 +1,30 @@
 # Componentes Digitais
 
-Essa lista descreve os principais componentes digitais utilizados em projetos diversos e no do nosso Z01!
+!!! success "2020-2"
+    Material atualizado.
+
+Aqui iremos alguns dos inúmeros componentes combinacionais
+(não precisam de clock) que são utilizados no desenvolvimento de circuitos digitais e que serão usados na disciplina.
 
 ## portas lógicas
 
-- buffer
-- not
+![](figs/Exercicios/AlgebraBooleana-componentes.png)
+
+``` vhd
+S <= A and B;  
+S <= A nand B; S <= not (A and B)
+S <= A or B;
+S <= A nor B;  S <= not (A or B);
+S <= A xor B; 
+S <= (not A);
+```
+
 - and
-- or
 - nand
+- or
 - nor
 - xor
+- not
 
 ## Multiplexado (mux)
 
@@ -19,16 +33,13 @@ Essa lista descreve os principais componentes digitais utilizados em projetos di
 > [fonte wikipedia](https://en.wikipedia.org/wiki/Multiplexer): Schematic of a 2-to-1 Multiplexer. It can be equated to a controlled switch.
 
 ```vhdl
-    entity mux is
-      port(
-            in0   : in  std_logic;
-            in1   : in  std_logic;
-            sel   : in  std_logic;
-            o     : out std_logic
-      );
-    end entity;
+entity mux is port(
+     in0 : in  std_logic;
+     in1 : in  std_logic;
+     sel : in  std_logic;
+       o : out std_logic);
+end entity;
 ```
-
 
 O mux como é chamado o [Multiplexador](https://www.electronics-tutorials.ws/combination/comb_2.html) é um componente que possui `n` entradas e uma saída `q`, um sinal chamado de seletor `sel` seleciona qual entrada irá ser copiada para a saída.
 
@@ -44,7 +55,7 @@ A seguir uma tabela verdade para um `mux` de 2 entradas:
 | X                   | 1                  |       1 |     1 |
     
 !!! note
-    A tabela verdade do mux de 2 entradas possuir 3^2 linhas (o seletor conta como entrada), logo deveria ter 8 linhas. Porém para simplificar, utilizamos o `X` que significa tanto faz `0` ou `1`, logo cada linha que possui `X` seria expandida para duas linhas, totalizando 8.
+    A tabela verdade do mux de 2 entradas possuir 3^2 linhas (o seletor conta como entrada), totalizando 8 linhas. Porém para simplificar, utilizamos o `X` que significa tanto faz (`0` ou `1`), logo cada linha que possui `X` seria expandida para duas linhas.
     
 !!! tip
     O tamanho do seletor deve ser um numero inteiro: $log2(size(n))$. 

@@ -10,7 +10,7 @@
 
 <iframe width="571" height="428" src="https://www.youtube.com/embed/dVixMB1uSYA?start=810 " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Podemos utilizar números binários para codificar qualquer tipo de dado, como vimos na teoria de dados digitais. Mas ainda não sabemos como utilizar números binários para representar: números inteiros que possam ser negativos e números reais (exe: `1,032`).
+Podemos utilizar números binários para codificar qualquer tipo de dado, como vimos na teoria de dados digitais. Mas ainda não sabemos como utilizar números binários para representar: números inteiros que possam ser negativos e números reais fracionados (exemplo: `-15`;  `1,032`; `-0,0001`; `10001231231`).
 
 Essa teoria irá tratar desses temas e também da parte referente a operações com números binários (soma e subtração).
 
@@ -18,15 +18,16 @@ Essa teoria irá tratar desses temas e também da parte referente a operações 
 
 <iframe width="831" height="468" src="https://www.youtube.com/embed/NFTG-VGkik8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-A soma binária é realizada de maneira similar a soma de decimais, só que precisamos notar que `1` + `1` em binário (**esse + é de soma não de OR**), resulta em `10`, o `1` do estouro e que passa para a próxima casa é chamado de `carry`. Esse `carry` é similar ao `vai um` em uma soma decimal, por exemplo: quando somamos em decimal `9` + `3` o resultado é `12` (10 + 2).
+A soma binária é realizada de maneira similar a soma de decimais, só que precisamos ==reforçar== que `1+1` em binário (**esse + é de soma não de OR**), resulta em `10`, o `1` do estouro e que passa para a próxima casa é chamado de `carry`. Esse `carry` é similar ao `vai um` em uma soma decimal, por exemplo: quando somamos em decimal `9` + `3` o resultado é `12` (10 + 2).
 
 !!! note "Exemplos a seguir consideram"
-    - Somador de 8 bits
-    - Números inteiros positivos
+    - Palavras binárias com 8 bits
+    - Números inteiros positivos 
 
 !!! tip
     - `01` + `01` = `10`
     - `01` + `01` + `01` = `11`
+    - `10` + `10`= `100`
 
 - 0xAA + 0x55 = 0xFF
 
@@ -58,17 +59,17 @@ A soma binária é realizada de maneira similar a soma de decimais, só que prec
      1 0 0 0 0 0 1 0      : Resultado (A+B)
 ```
 
-!!! tip
-    - `01` + `01` = `10`
-    - `01` + `01` + `01` = `11`
+**Precisamos entender que cada bit deve ser armazenado em hardware! Um sistema com `8` bits não consegue armazenar `9` bits, e se houver um estouro no último bit essa informação será perdida.**
 
-Precisamos perceber que cada bit deve ser armazenado em hardware real! Um sistema com `8` bits não consegue armazenar `9` bits, e se houver um estouro no último bit essa informação será perdida.
+!!! note
+    Os bits são armazenados na memória, as memórias armazenam vetores de bits. 
+    Computadores reais não possuem memória infinita e nem largura de bits infinita.
 
 - 0x80 + 0x80 = 0x100, mas resulta em **0x00** por conta do somador ser 8 bits:
 
 ```
 carry é perdido
-   1
+   x
     \
      1 0 0 0 0 0 0 0 
      1 0 0 0 0 0 0 0 +
@@ -87,15 +88,16 @@ carry é perdido
      1 0 0 0 0 1 0 0    
 ```
 
-## complemento de um
+## Complemento de um
 
 !!! warning
-    Forma 'errada/ não usual' de armazenar números sinalizados (+, -)
+    Forma **errada/ não usual** de armazenar números sinalizados (+, -)
 
-!!! note "Exemplos consideram"
-    - Palavras binárias com 4 bits
+!!! note "Exemplos a seguir consideram"
+    - Palavras binárias com 8 bits
+    - Números inteiros positivos 
 
-No complemento de um, utilizamos a casa mais significativa de um vetor de bits para representar se o número é positivo (`0`) ou negativo (`1`). Exemplo (utilizando 4 bits):
+No **complemento de um**, utilizamos a casa/bit mais significativa de um vetor de bits para representar se o número é positivo (`0`) ou negativo (`1`). Exemplo (utilizando 8 bits):
 
 - Valor **+1** em binário, com complemento de 1
 
@@ -126,7 +128,7 @@ O problema do complemento de 1 é que:
      0 0 0 0 0 0 0 1      : +1
      1 0 0 0 0 0 0 1 +    : -1
      ---------------
-     1 0 0 0 0 0 1 0      : -2 e não 0 (como deveria ser)
+     1 0 0 0 0 0 1 0      : -2 e não 0 
 ```
 
 !!! note "Tabela com 3 bits"
@@ -145,22 +147,19 @@ O problema do complemento de 1 é que:
 
 <iframe width="613" height="460" src="https://www.youtube.com/embed/NED9IIpteXA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-O complemento de dois é uma outra maneira de representar números sinalizados com bits, essa técnica possui as vantagens de:
+O complemento de dois é uma outra maneira de representar números sinalizados com bits, essa técnica possui alguams vantagens:
 
 - Uma única representação para o valor 0: `0000`
 - A operação de soma/ subtração funciona corretamente! 
 - O bit mais significativo indica se a palavra é positiva (`0`) ou negativa (`1`).
 
-Para obter um número positivo <-> negativo nessa notação é necessário seguir os seguintes passos:
+Para obter um número positivo <--> negativo nessa notação é necessário seguir os seguintes passos:
 
-1. Escreva o valor em binários (positivo)
+1. Escreva o valor em binário (positivo)
 1. Inverter todos os bits (not bit a bit) da palavra original 
 1. Somar o valor `1` a palavra invertida.
 
-!!! note "Exemplos consideram"
-    - Palavras binárias com 4 bits
-
-- Exemplo: `-3` = `1101`
+- Exemplo: `-3` = `11111101`
 
 ```
      0 0 0 0 0 0 1 1      : 3
@@ -171,7 +170,7 @@ Para obter um número positivo <-> negativo nessa notação é necessário segui
      1 1 1 1 1 1 0 1  <-- -3 em complemento de 2       
 ```
 
-- Exemplo: `-5` = `1011`
+- Exemplo: `-5` = `111111011`
 
 ```
     0 0 0 0 0 1 0 1      : 5
@@ -182,13 +181,15 @@ Para obter um número positivo <-> negativo nessa notação é necessário segui
     1 1 1 1 1 0 1 1  <-- -5 em complemento de 2
 ```
 
-- Exemplo (com 4 bits para simplificar): `-9` (não funciona!!)
+- ==Exemplo (com 4 bits para simplificar): -9 (não funciona porque não cabe)==
 
 ```
+(exemplo com 4 bits!)
+
      1 0 0 1      : 9
      0 1 1 0      : not bit a bit da palavra original
          + 1      : Soma um a palavra invertida
-     0 1 1 1  
+     0 1 1 1    <-- 7 !! (não funcionou)
      ^
      | não funcionou =(
 ```
@@ -270,3 +271,11 @@ Para construirmos o valor `26.5` basta selecionarmos os bits que somados dão es
 A questão dessa notação é que uma vez escolhido onde o ponto vai estar localizado (projeto de hardware) não da para mudar depois, se o número a ser armazenado é apenas fração, perdemos muitos bits sem uso com a parte inteira, o que faz possuirmos menor resolução.
 
 A solução para isso é a notação de [ponto flutuante - IEEE 754](https://pt.wikipedia.org/wiki/IEEE_754) vocês vão ver isso na disciplina de Sistemas Hardware Software do 5s).
+
+## Ponto flutuante
+
+[Ponto flutuante](https://en.wikipedia.org/wiki/Floating-point_arithmetic) é uma outra notação na qual é possível representar números racionais digitalmente (binário), nessa técnica a vírgula não é fixa, e a notação
+pode se adequar para armazenar números muito trandes ou muito pequenos. No entanto, existe um custo computacional mais elevado envolvido nisso. 
+
+Processadores modernos possuem um hardware (ULA) dedicada a realizar operações em
+ponto flutuante, normalmente usando o padrão [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754).
