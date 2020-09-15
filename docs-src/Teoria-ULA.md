@@ -1,26 +1,23 @@
 # ULA
 
-
 Unidade Lógica Aritmética (ULA) é a parte da Unidade de Processamento (CPU) responsável por realizar operações binárias. Nesse hardware 
 
 ![](figs/D-ULA/D-sistema-ula.png)
 
 !!! info "Leitura necessária"
-    - [The Elements of Computing Systems (Livro texto do curso), cap 2.2.2](https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf) 
-
-<div style="text-align: center;" class="no-print"><embed src="https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf#page=7" width="650" height="500"></div>
+    - [The Elements of Computing Systems (Livro texto do curso), cap 2.](https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf) 
+    
+    <div style="text-align: center;" class="no-print"><embed src="https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf" width="600" height="500"></div>
 
 !!! warning
     Estudar pelo livro, o restante dessa teoria é apenas um resumo e algumas notas.
 
 <iframe width="955" height="716" src="https://www.youtube.com/embed/zRX3sOtjS10?start=403" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 !!! tip
     No coursera temos os autores do livro dando uma aula sobre esse tópico.
     
     - https://www.coursera.org/lecture/build-a-computer/unit-2-4-arithmetic-logic-unit-6ZS46
-
 
 ## Arquitetura
 

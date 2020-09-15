@@ -1,12 +1,16 @@
 # Lab 6: Adders
 
-!!! note "Trabalhando em grupo"
-    Realizar o lab em trio
+!!! success "2020-2"
+    Material atualizado.
 
 !!! warning "Antes de começar"
     Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: [`Util/Começando novo Projeto`](https://insper.github.io/Z01.1/Util-Comecando-novo-projeto/) e depois voltar para esse lab.
 
     - Não seguir sem realizar a etapa anterior.
+
+!!! note "Sugestão"
+    1. Realizar o lab individualmente
+    1. Ficar no canal do grupo e tirar dúvidas entre os colegas!
 
 ## Half-adder
 
@@ -30,11 +34,11 @@ Com a tabela verdade podemos extrair as duas equações que descreve esse compon
 !!! tip
     $\bar{a} b + a \bar{b} = a \oplus b$
 
-1. Agora com a equação definida é possível realizarmos uma descrição em `VHDL` do componente `halfadder`. Abra o arquivo  `C-UnidadeLogicaAritmetica/src/rtl/HalfAdder.vhd` e modifique sua arquitetura para implementar a equação do halfadder. 
-2. Edite o arquivo de configuração do teste `tests/config.txt` e descomente a linha referente ao `halfadder`.
+1. Agora com a equação definida é possível realizarmos uma descrição em `VHDL` do componente `halfadder`. Abra o arquivo  `C-UnidadeLogicaAritmetica/src/HalfAdder.vhd` e modifique sua arquitetura para implementar a equação do halfadder. 
+2. Edite o arquivo de configuração do teste `config_testes.txt` e descomente a linha referente ao `halfadder`.
 3. Valide a implementação executando o script de testes: `testeULA.py`
 
-### Testando na FPGA
+### Implementando
 
 Abra o projeto do Quartus e note que o `toplevel` faz uso do `HalfAdder`:
 
@@ -42,8 +46,7 @@ Abra o projeto do Quartus e note que o `toplevel` faz uso do `HalfAdder`:
 begin
 
   u1 : HalfAdder port map(a => SW(0), b=> SW(1), soma => LEDR(0), vaium => LEDR(1));
-
-end rtl;
+  
 ```
 
 ```
@@ -56,10 +59,16 @@ SW(1) -->  b -->|      |--> Carry --> LEDR(1)
 ```
 
 !!! example "Tarefa"
+    - Implemente o VHDL
     - Compile o projeto
     - Gere e analise o RTL
+
+    No insper? Faça também:
+    
     - Programe a FPGA
     - Mexa nas chaves, o resultado é o esperado?
+    
+    (**filme e mostre para os seus colegas!!**)
 
 ## Full-Adder
 
@@ -80,10 +89,16 @@ end rtl;
 ```
 
 !!! example "Tarefa"
+    - Implemente o VHDL
     - Compile o projeto
     - Gere e analise o RTL
+
+    No insper? Faça também:
+    
     - Programe a FPGA
     - Mexa nas chaves, o resultado é o esperado?
+    
+    (**filme e mostre para os seus colegas!!**)
     
 ## Somador
 
@@ -112,11 +127,16 @@ Nessa ligação, estamos somando dois vetores de dois bits cada: `x(1 downto 0) 
 Utilizando `port map` construa o circuito anterior, utilize como entrada X as chaves `[SW(1) SW(0)]` e como entrada Y as chaves `[SW(3) SW(2)]`, para visualizar coloque a saída S nos leds `[LEDR(1) LEDR(0)]` e o carry no `LEDR(3)`
 
 !!! example "Tarefa"
-    - Modifique o `toplevel` para implementar esse somador
+    - Implemente o VHDL
     - Compile o projeto
     - Gere e analise o RTL
+
+    No insper? Faça também:
+    
     - Programe a FPGA
     - Mexa nas chaves, o resultado é o esperado?
-
+    
+    (**filme e mostre para os seus colegas!!**)
+    
 !!! tip
     Você deve utilizar `port map` para isso, inicializando dois componentes FullAdder

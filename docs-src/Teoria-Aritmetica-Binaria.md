@@ -1,12 +1,9 @@
 # Aritmética Binária
 
+!!! success "2020-2"
+    Material atualizado.
+
 - Conteúdo: Complemento de um/ Complemento de dois/ Ponto fixo/ Soma binária/ 
-
-!!! info "Leitura necessária"
-    - [The Elements of Computing Systems (Livro texto do curso), cap 2.](https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf) 
-    
-    <div style="text-align: center;" class="no-print"><embed src="https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_f0eaab042ba042dcb58f3e08b46bb4d7.pdf" width="500" height="375"></div>
-
 
 <iframe width="571" height="428" src="https://www.youtube.com/embed/dVixMB1uSYA?start=810 " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
