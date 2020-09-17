@@ -1,54 +1,36 @@
 # Lab 8: ULA 
 
-!!! note "Trabalhando em grupo"
-    Realizar o lab em trio
+!!! success "2020-2"
+    Material atualizado.
 
-!!! warning "Antes de começar"
-    Toda vez que um novo projeto começar será necessário realizar algumas configurações no repositório do grupo, vocês devem seguir para o documento: [`Util/Começando novo Projeto`](https://insper.github.io/Z01.1/Util-Comecando-novo-projeto/) e depois voltar para esse lab.
-
-    - Não seguir sem realizar a etapa anterior.
-
+!!! note "Sugestão"
+    1. Realizar o lab individualmente
+    1. Ficar no canal do grupo e tirar dúvidas entre os colegas!
 
 O objetivo desse laboratório é o de trabalharmos com o controle dos sinais da ULA para entendermos as operações da unidade de processamento do nosso computador.
 
-1. Programando FPGA com ULA
-1. Entendendo funções das chaves e LEDs
+1. Executando o simulador
 1. Controlando ULA para realizar operações específicas (exercícios)
 
-## Programando FPGA
+## Simulador
 
-Com a FPGA plugada no PC e ligada, execute o script `programFPGA.py` da pasta do projeto `C`. Esse script irá realizar a programação da FPGA com o hardware da Unidade Lógica Aritmética - ULA que vocês terão que implementar. 
+Iremos utilizar um simulador da ULA feito em python + Qt. Siga os passos a seguir:
 
-Nesse exemplo os controles da ULA estão mapeados para as chaves da FPGA, a saída da ULA foi mapeada para LEDs: como ilustrado as figuras a seguir:
-
-![ULA Z01](figs/D-ULA/D-ula-fpga-1.png)
-
-![ULA FPGA map](figs/D-ULA/D-ula-fpga-2.png)
-
-Como isso é feito em VHDL? De uma olhada no `toplevel` do projeto (`C-UnidadeLogicaAritmetica/src/TopLevel.vhd`)
-
-``` vhd
-  ula0: ALU port map (
-    x                  => x,
-    Y                  => y,
-    Zx                 => SW(0),
-    Nx                 => SW(1),
-    Zy                 => SW(2),
-    Ny                 => SW(3),
-    F                  => SW(4),
-    No                 => SW(5),
-    Zr                 => LEDR(8),
-    Ng                 => LEDR(9),
-    Saida(7 downto 0)  => LEDR(7 downto 0),
-    Saida(15 downto 8) => Open
-    );
+```sh
+cd ~
+git clone https://github.com/eduardomarossi/z01.1-ula
+cd z01.1-ula
+pip3 install -r requirements.txt --user
+python3 main.py
 ```
 
-Note que a ULA que iremos desenvolver no projeto C tem **16 bits** de largura, porém como temos um limite de LEDs e botões na FPGA, estamos ignorando os valores mais significativos, sem afetar o projeto.
+Você deve obter a seguinte interface:
+
+![](https://raw.githubusercontent.com/eduardomarossi/z01.1-ula/master/image.png)
 
 ## Controlando ULA
 
-Com a FPGA programada podemos testar a ULA modificando seus sinais de controle. A seguir uma proposta de operações lógicas devem ser realizadas na FPGA, seus sinais de controle e resultado devem ser anotados nas tabelas.
+Com o simulador podemos testar a ULA modificando seus sinais de controle. A seguir uma proposta de operações lógicas que devem ser realizadas na ULA, seus sinais de controle e resultados devem ser anotados nas tabelas.
 
 !!! tip 
     O projeto **FIXA** as entradas da ULA com os valores:
