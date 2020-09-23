@@ -11,19 +11,18 @@ A pasta do projeto `D-LogicaSequencial` no repositório Z01, possui a seguinte e
 ```
 /D-LogicaSequencial
     testeLogicaSequencial.py
+    config_testes.txt
     /Quartus
     /src
-        /rtl
-            *.vhd
+        *.vhd
     /tests
-        /tst
-            *.vhd
+        *.vhd
 ```
 
-1. Quartus: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/rtl/*.vhd`;
+1. Quartus: Projeto Quartus que faz uso dos arquivos VHDL localizados em `src/*.vhd`;
 1. scripts: Scripts em python que automatizam a execução dos testes;
-1. `src/rtl/*.vhd`: Arquivos VHDL que serão implementados pelo grupo;
-1. `tests/tst/*.vhd`: Arquivos VHDL que realizam o teste lógico nos arquivos do rtl.
+1. `src/*.vhd`: Arquivos VHDL que serão implementados pelo grupo;
+1. `tests/*.vhd`: Arquivos VHDL que realizam o teste lógico nos arquivos do rtl.
 
 ### Executando o Script de Teste 
 
@@ -33,20 +32,20 @@ Abra o terminal na pasta `D-LogicaSequencial` e execute o script python localiza
 $ python testeLogicaSequencial.py
 ```
 
-O mesmo irá compilar os arquivos `src/rtl/*.vhd` e executar os testes unitários em cada um deles. Nesse momento do teste, como os módulos não estão implementados, o resultado deverá ser falho.
+O mesmo irá compilar os arquivos `.vhd` e executar os testes unitários em cada um deles. Nesse momento do teste, como os módulos não estão implementados, o resultado deverá ser falho.
 
 !!! note
-    Lembre que o arquivo `tests/config.txt` define quais testes serão executados.
+    Lembre que o arquivo `config_testes.txt` define quais testes serão executados.
 
-# Projeto
+## Projeto
 
 - Deve-se gerar uma imagem com a forma de onda desses módulos.
 - Deve-se gerar um RTL para cada módulo do projeto (Lab 10)
 - Note que é possível reaproveitar, via `port map`, os módulos dos projetos anteriores. Para isso basta usar port map.
 
-## Módulos 
+### Módulos 
 
-Esses arquivos estão localizados em  `D-LogicaSequencial/src/rtl/` e detalhados no [**Capítulo 3 - The Elements of Computing Systems**](https://docs.wixstatic.com/ugd/44046b_862828b3a3464a809cda6f44d9ad2ec9.pdf)
+Os modulos a serem desenvolvidos na entrega estão detalhados no livro base do curso: [**Capítulo 3 - The Elements of Computing Systems**](https://docs.wixstatic.com/ugd/44046b_862828b3a3464a809cda6f44d9ad2ec9.pdf)
 
 ---------------------------
 
@@ -154,29 +153,29 @@ else
 !!! tip
     Todos esses módulos estão bem documentados no livro The Elements of Computer System. Cap 3.
  
-## Forma de onda
+### Forma de onda
 
 Para cada teste realizado, deve-se carregar a interface gráfica do simulador e tirar um **print** da forma de onda do módulo com os testes aplicados a ele. Essa imagem deve ser salva na mesma pasta dos arquivos vhdl (`src/doc/*_wave.png`) e com o mesmo nome dos módulos (similar ao projeto passado). 
 
 !!! warning
     Não basta só gerar a imagem, você precisa analisar e entender. Isso será cobrado nas avaliações.
 
-## RTL
+### RTL
 
 Para cada módulo deve-se gerar o `RTL` e salvar uma imagem da implementação na pasta `src/doc/_rtl.png`. 
 
 !! warning
     Não basta só gerar a imagem, você precisa analisar e entender. Isso será cobrado nas avaliações.
 
-## Testando em Hardware
+### Testando em Hardware
 
 No hardware você deverá desenvolver um cenário de teste para o `Program Counter` ou para para a `RAM8`.
 
-# Rubricas para avaliação de projetos
+## Rubricas para avaliação de projetos
 
 Cada integrante do grupo irá receber duas notas: uma referente ao desenvolvimento total do projeto (Projeto) e outra referente a sua participação individual no grupo (que depende do seu papel).
 
-## Projeto
+### Projeto
 
 | Conceito |                                                                           |
 |----------|---------------------------------------------------------------------------|
@@ -202,21 +201,21 @@ Para a rubrica A o grupo deve implementar os seguintes módulos extras e os seus
 
 - Flip Flop JK
    - **Arquivo**: `conceitoA/FlipFlopJK.vhd`
-   - **Arquivo Teste**: `tests/tst/tb_FlipFlopJK.vhd`
+   - **Arquivo Teste**: `tests/tb_FlipFlopJK.vhd`
    - **Dependência**:
  
 É é flipflop do tipo [JK](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
 
 - Flip Flop T
    - **Arquivo**: `ConceitoA/FlipFlopT.vhd`
-   - **Arquivo Teste**: `tests/tst/tb_FlipFlopT.vhd`
+   - **Arquivo Teste**: `tests/tb_FlipFlopT.vhd`
    - **Dependência**:
  
 É é flipflop do tipo [T](https://en.wikipedia.org/wiki/Flip-flop_(electronics))
 
 - Counter Down
    - **Arquivo**: `ConceitoA/CounterDown.vhd`
-   - **Arquivo Teste**: `tests/tst/CoubterDown.vhd`
+   - **Arquivo Teste**: `tests/CoubterDown.vhd`
    - **Dependência**: `FlipFlopT`
  
  O CouterDown é componente capaz de contar para 'baixo' em binário (000 -> 111 -> 110 -> 101 -> 100), esse componente é formado por FlipFlops do tipo T, como demonstrado no diagrama a seguir:
