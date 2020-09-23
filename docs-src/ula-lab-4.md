@@ -6,40 +6,35 @@
     
     1. Um integrante faz na sua máquina e compartilha a tela com os demais (todos comentam o mesmo código)
 
-
 !!! info "Tempo"
-    Tempo estimando no lab: 15 min
-
+    Tempo estimando no lab: 45 min
 
 ## Começando
 
-Para não perdemos tempo com o git, esse lab está disponível em um novo repositório, vocês podem ou clonar direto ou realizar um fork. 
-
-Para começar a trabalhar, clone o repositório para sua máquina:
+Este lab está disponível em um novo repositório, para começarem trabalhar clonem o repositório para sua máquina:
 
 ```
 cd ~
 git clone https://github.com/Insper/Elementos-Lab10
-
 ```
 
 ## Lab
 
-O objetivo desse lab é o de começarmos entender como a ULA pode ser utilizada por um programa para realizar ações. Em CPUs a ULA é controlada por um bloco chamado de Unidade de Controle (`control unit`), que é responsável por interpretar as instruções e comandar a ULA!
+O objetivo desse lab é o de começarmos entender como a ULA pode ser utilizada por um programa para realizar ações de um programa. Nas CPUs a ULA é controlada por um bloco chamado de Unidade de Controle (`control unit`), que é responsável por interpretar as instruções e comandar a ULA!
 
-Para isso vamos usar a ULA proposta pelo curso (a que vocês estão fazendo) em uma arquitetura de CPU muito simples, mas que servirá de exemplo (nosso Z01.1 não será assim). Essa arquitetura de CPU possui uma entrada do usuário (que pode ser por exemplo as chaves da placa) conectada a entrada `Y` da ULA e uma saída (que pode ser os LEDs) conectada a saída (out), a entrada X é conectada a um registrador que recebe o valor da saída da ULA. 
+Para entender como isso funciona vamos usar a ULA desenvolvida por vocês em uma arquitetura de CPU muito simples, mas que servirá de exemplo (o nosso computador não será assim). Essa arquitetura de CPU possui uma entrada do usuário (que pode ser por exemplo as chaves da placa) conectada a entrada `Y` da ULA e uma saída (que pode ser os LEDs) conectada a saída (out), a entrada X é conectada a um registrador que recebe o valor da saída da ULA. 
 
-Nessa arquitetura fictícia vamos trabalhar com o conceito de registrador acumulador, onde o resultado da ULA será sempre salvo no `REG_C`.
+Na CPU deste lab iremos trabalhar com o conceito de registrador acumulador, onde o resultado da ULA será sempre salvo em um lugar fixo: `REG_C`.
 
 !!! note
     Registrador é o termo utilizado para uma unidade simples de memória
-    capaz de armazenar apenas uma unidade de dados (nesse caso 16bits).
+    capaz de armazenar apenas uma unidade de dados (nesse caso 16 bits).
     
     Nesse caso, a cada operação do sistema (clock) o registrador salvo
     o resultado da ULA.
     
 !!! tip
-    O `REG_C` guarda um resultado da operação da ULA até a próxima instrução
+    O `REG_C` guarda um resultado da operação da ULA até a próxima instrução (clock)
 
 O diagrama a seguir ilustra a Arquitetura descrita anteriormente:
 
@@ -47,11 +42,11 @@ O diagrama a seguir ilustra a Arquitetura descrita anteriormente:
 
 ## Control Unit
 
-A unidade de controle (UC) é responsável por ler as instruções a serem executadas (que estão em binário) e comandar toda a CPU para executar o que deve ser feito. Nesse exemplo fictício a UC comanda apenas a ULA, mas ela poderia controlar outras coisas também.
+A unidade de controle (UC) é responsável por ler as instruções a serem executadas (que estão em binário) e comandar toda a CPU para executar o que deve ser feito. Nesse exemplo fictício a UC comanda apenas a ULA, mas ela poderia controlar outras coisas também (mux, pipeline, ...).
 
 ## Programa
 
-O programa nesse caso é uma palavra de 4 bits de largura que descreve qual operação deve ser realizada na CPU (linguagem de máquina), nessa nossa CPU tempos as seguintes operações definidas:
+O programa nesse caso é uma palavra de 4 bits de largura que descreve qual operação deve ser realizada na CPU (linguagem de máquina), nessa CPU tempos as seguintes operações definidas:
 
 | Linguagem de maquina | Instrução               | OP CODE |
 |----------------------|-------------------------|---------|
@@ -66,6 +61,9 @@ O programa nesse caso é uma palavra de 4 bits de largura que descreve qual oper
     `OP CODE` é o termo usado para descrever uma instrução, 
     programas escritos em assembly fazem uso de opcodes 
     para facilitar a programação.
+
+!!! note
+    `nop` = No Operation (não faz nada/ não modifica nada!) 
 
 ### Exemplo
 
@@ -82,15 +80,10 @@ add 1,C
 nop
 ```
 
-!!! tip
-    nop = no operation, ou seja, não faz nada! CPUs de forma simplificada uma CPU possui dois estados de operação, ou está executando alguma instrução ou está dormindo. 
-    
-    Isso não é bem verdade em hardware reais, uma CPU pode estar em outros estados, tais como esperando um resultado de uma operação.
-
 !!! note
-    Nosso `nop` é implementando pelo comando que faz sair X como resultado da ULA, assim `REG_C` = `REG_C`, ou seja, não faz nada! (que modifica o resultado da saída da CPU).
+    Esse `nop` é implementando pelo comando que com que a enetrada `X` passe pela ULA (sem modifica), assim `REG_C` = `REG_C`, ou seja, não faz nada.
 
-Para fazermos isso, temos que ter a seguinte instrução em memória:
+Para executarmos esse programa, devemos trazuir os opcodes para a linguagem de máquina que de fato a CPU pode ler (lembre que no final é tudo uns e zeros), para fazermos isso temos que ter a seguinte instrução na memória:
 
 ```
 0:   0001     <--- O Programa começa na linha 0
@@ -98,18 +91,21 @@ Para fazermos isso, temos que ter a seguinte instrução em memória:
 2:   0000     v
 ```
 
-Legal né? Mas para isso funcionar, a Unidade de Controle deve ser capaz de ler a instrução (4 bits) e controlar a ULA para executar tal comando. Nesse lab ela já está implementada com as duas instruções anteriores (`mov 0,C`, `add 1,c`).
+Legal né? Mas para isso funcionar a Unidade de Controle deve ser capaz de ler a instrução (4 bits) e controlar a ULA para executar tal comando. Nesse lab ela já está implementada com as duas instruções anteriores (`mov 0,C`, `add 1,c`).
 
-Para testar o projeto executamos o comando: `./testeLab.py`. O mais interessante é rodar com `-g` e verificar a forma de onda...
+Para testar o projeto executamos o comando: `./testeLab.py`.
+
+!!! tip
+    Execute o comando com `-g` e verifique a forma de onda (e todos os sinais internos da CPU)
 
 !!! tip "testando"
     `./testeLab.py`
 
 ### 1. Terminando o Control Unit
 
-Nossa primeira atividade nesse lab será a de termina de implementar a Unidade de Controle,  para possuir todas as instruções anteriores. Uma parte dela já foi implementada, mas só possui as instruções: `mov 0,C`, `add 1,C` e `nop`, vamos implementar as demais?
+Nossa primeira atividade nesse lab será a de termina de implementar a Unidade de Controle, para poder executar todas as instruções anteriores. A versão disponível para vocês só possui as instruções: `mov 0,C`, `add 1,C` e `nop`, vamos implementar as demais?
 
-Para isso será necessário modificar o arquivo `/src/ControlUnit.vhd`, nele é que está implementando a lógica que traduz instruções em execução no hardware. O control unit lê o a instrução que está salva na memória (`op`) e aciona a ULA (`ula`) para realizar tal operação.
+Para isso será necessário modificar o arquivo `/src/ControlUnit.vhd`, nele é que está implementando a lógica que traduz instruções em comando do hardware. O control unit lê o a instrução que está salva na memória (`op`) e aciona a ULA (`ula`) para realizar tal operação.
 
 A saída do controlUnit (`ula out std_logic_vector`) é um vetor composto pelos sinais de controle da ula: [`zx`, `nx`, `zy`, `ny`, `f`, `no`]. 
 
@@ -137,14 +133,11 @@ end architecture;
 !!! example
     Quando a instrução for `0001` (`mov 0,C`) o controlUnit irá acionar a ula: `zx=1`, `nx=0`, `zy=1`, `ny=1`, `f=1`, `no=0` para que a sua saída seja 0.
     
-
-
 !!! example "Modifique"
-    1. Você deve inserir as instruções que estão faltando  serem implementadas no ControlUnit (`not C`, `add Y,C`, `sub 1,C`).
+    1. Você deve implementar as instruções que estão faltando no ControlUnit (`not C`, `add Y,C`, `sub 1,C`).
     1. Consulte a tabela de operações da ULA: 
         - https://insper.github.io/Z01.1/Teoria-ULA/
 
-   
 Antes de testar aplique o patch a seguir para inserirmos os novos comandos no teste do lab:
 
 ```bash
@@ -169,7 +162,7 @@ Discuta em grupo as limitações dessa nossa CPU, e o que poderia ser feito para
 
 1. Essa CPU é capaz de realizar qualquer tipo de cálculo?
 1. Quais limitações você percebe nela?
-1. Temos condicionais? Como implementar
+1. Temos condicionais? Como implementar?
 1. ....
 
 Responda o formulário com a resposta do grupo após discussão (pode ser uma resposta por grupo ou uma mais de uma, vocês que escolhem):
