@@ -1,5 +1,8 @@
 # ULA
 
+!!! success "2020-2"
+    Material atualizado.
+
 Unidade Lógica Aritmética (ULA) é a parte da Unidade de Processamento (CPU) responsável por realizar operações binárias. Nesse hardware 
 
 ![](figs/D-ULA/D-sistema-ula.png)
