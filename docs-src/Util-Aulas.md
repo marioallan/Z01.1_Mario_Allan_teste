@@ -2,15 +2,31 @@
 
 !!! success "2020-2"
     Material atualizado.
-    
+ 
+## Aula 7
+ 
+- Explicação pequena CPU
+- [Lab 9: Pequena CPU](https://insper.github.io/Z01.1/ula-lab-4/)
+- [Teoria: Lógica Sequencial](https://insper.github.io/Z01.1/Teoria-Logica-Sequencial/)
+- [Estudo: Lógica Sequência](https://docs.google.com/forms/d/e/1FAIpQLSdGuoLR1Re3aok6I6adChgaDuMg0-dJaA7FF2gK5MLIGReg3g/viewform)
+
 ## Aula 6 
 
-- https://create.kahoot.it/v2/details/dd339b0b-1e74-445f-a1e6-783076cedfe2
+lab 8
+Terminar lab 6 e 7. 
+Entrega C para terça 
 
 ## Aula 5
 
+- Lab 6
+- Lab 7
+
 ## Aula 4    
-    
+
+Pequena expositiva
+	Exercícios Dados Digitais 1: https://docs.google.com/spreadsheets/d/1MqgT-U9c3V4v5LVi27yZr89jugACc1sp4-R9MYf26Pg/edit?usp=sharing
+- [Estudo: Dados Digitais 2: https://insper.github.io/Z01.1/Exercicio-Dados-2/
+
 ## Aula 3
 
 ## Aula 2 

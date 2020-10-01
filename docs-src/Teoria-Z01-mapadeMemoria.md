@@ -1,14 +1,17 @@
 # Mapa de memória
 
+!!! success "2020-2"
+    Material atualizado.
+
 A forma na qual a maioria dos computadores acessam periféricos (teclado/ mouse/ USB/ tela/ ...) é a do periférico mapeado em memória. Essa técnica utiliza da capacidade do computador de escrever e ler da memória RAM, **fazendo com que regiões de endereços da memória não sejam uma 'memória' física, mas sim um periférico do computador.**
 
 ![](figs/Teoria/Z0-mapa-de-memoria.svg){width=500}
 
-Vamos trabalhar com o exemplo do nosso Z01, a memória é composta de: 
+Vamos trabalhar com o exemplo do nosso Z01, a memória é composta de:
 
 - RAM
 - LCD
-- Chaves  
+- Chaves
 - LEDs
 
 Nesse nosso hardware a memória que é visível pela CPU é organizada da seguinte maneira:
@@ -41,7 +44,7 @@ A memória RAM é um componente do computador que permite guardarmos dados volá
 
 A princípio podemos utilizar qualquer endereço da nossa memória RAM para armazenar nossos dados temporários, isso não será verdade mais para frente do curso, onde iremos organizar nossa memória RAM em secções.
 
-!!! example 
+!!! example
     Vamos fazer um exemplo que lê um dado na RAM[3] o incrementa e salva novamente no mesmo endereço de memória:
 
     === "código"
@@ -61,29 +64,29 @@ A princípio podemos utilizar qualquer endereço da nossa memória RAM para arma
 
     === "simulador"
         ![](figs/Teoria/Z0-nasm-ram-simulator.gif){width=600}
-    
+
     === "hardware"
         ![](figs/Teoria/Z0-nasm-ram.gif)
-    
+
 
 !!! tip
     Execute você esse código no simulador!
 
-!!! warning 
+!!! warning
     Precisamos notar que a memória RAM não é um registrador e possui uma limitação muito **séria**, não podemos realizar uma ação de ESCRITA E LEITURA no mesmo ciclo! **O que impossibilita de fazermos o seguinte:**
-    
+
     ```nasm
     leaw $3, %A  ; NÃO PODE!
     invw (%A)    ; proibido!!
     ```
-    
+
     Outro tipo de operação que não pode:
-    
+
     ``` nasm
     addw (%A), %D, (%A)
     ```
-    
-    
+
+
 
 ## LEDs
 
@@ -96,7 +99,7 @@ A princípio podemos utilizar qualquer endereço da nossa memória RAM para arma
 
 Os LEDs da FPGA são mapeados no endereço de memória `21184` onde cada bit (9..0) representa um LED, se o bit específico estiver valor `1`o LED está aceso e `0` apagado.
 
-!!! example 
+!!! example
     Como isso é traduzido para código? Imagine que desejamos acender um LED que nosso computador controla, para isso devemos fazer com que o registrador `%A` aponte para o endereço de memória na qual o LED está associado e então escreva nele:
 
     === "código"
@@ -125,7 +128,7 @@ Os LEDs da FPGA são mapeados no endereço de memória `21184` onde cada bit (9.
 
 Os chaves (SW) da FPGA são mapeados no endereço de memória `21185` onde cada bit (9..0) representa uma chave, se o bit específico estiver valor `1` indica que a chave está ligada (on) e `0` desligada.
 
-!!! example 
+!!! example
 
     O exemplo a seguir copia o valor das chaves para os LEDs:
 
@@ -152,22 +155,22 @@ Os chaves (SW) da FPGA são mapeados no endereço de memória `21185` onde cada 
 
 ![](figs/Teoria/Z0-mapa-de-memoria-lcd.svg){width=500}
 
-O nosso LCD é um dispositivo de `320x240` pixels. Cada linha do endereço de memória do LCD representa `16` pixels do dispositivo, conforme figura anterior. Para acender um pixel, basta colocar `1` ou `0` para apagar.- 
+O nosso LCD é um dispositivo de `320x240` pixels. Cada linha do endereço de memória do LCD representa `16` pixels do dispositivo, conforme figura anterior. Para acender um pixel, basta colocar `1` ou `0` para apagar.-
 
 !!! tip "endereços do LCD"
     Como nosso LCD possui 320px na horizontal, e como cada endereço de memória acessa 16px por vez,
     uma linha é acessível por: `320/16 = 20` endereços. Ou seja, para acessar os primeiros px de cada linha devemos escrever endereço de memória:
-    
+
     - Primeira linha: `16384 + 0x20`: 16384
     - Segunda  linha: `16384 + 1x20`: 16404
     - Terceira linha: `16384 + 2x19`: 16424
     - ...
     - Última linha:  `16384 + 239x19`: 21164
-    
-    
+
+
 !!! example "LCD"
-    Vamos desenhar px no meio do LCD que, para isso precisamos carregar o valor  0x`0001` no endereço `18242` 
-    
+    Vamos desenhar px no meio do LCD que, para isso precisamos carregar o valor  0x`0001` no endereço `18242`
+
     ```nasm
     leaw $18242, %A
     movw $1, (%A)
