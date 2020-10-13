@@ -11,17 +11,18 @@ Ao final desse lab você deve ser capaz de:
 
     - Não seguir sem realizar a etapa anterior.
 
-- [ ] [Atualizem o Z01-Tools!](https://github.com/Insper/Z01.1/wiki/Dicas-GIT#atualizando-submodules) submodule antes de começar **(TODOS DEVEM FAZER)**
-
-(realizar em dupla/ individual)
+!!! tip
+    - Atualizem o Z01-Tools! submodule antes de começar.
 
 ## Simulador
 
 Nosso código assembly pode ser executado em hardware de verdade (FPGA) porém nesse primeiro momento iremos trabalhar em um ambiente simulado que nos dará maior facilidade de programação e depuração.
 
-Um pouco de contexto: O livro texto (The Elements Of Computer System) disponibiliza um simulador da CPU original todo escrito em java, esse código é fechado e não permite nenhuma customização. Em 2017 o Prof. Luciano Pereiro iniciou a criação de um simulador Z0 (versão anterior) também em Java, onde teríamos controle total do software, o simulador funcionava. Percebemos alguns pontos negativos de utilizar um simulador em Java sendo o principal: Qualquer alteração no Hardware iria demandar uma alteração no simulador, sendo necessário mantermos dois projetos independentes e sincronizados.
+Um pouco de contexto: O livro texto (The Elements Of Computer System) disponibiliza um simulador da CPU original todo escrito em java, esse código é fechado e não permite nenhuma customização. Em 2017 o Prof. Luciano Pereiro iniciou a criação de um simulador Z0 (versão anterior) também em Java, onde teríamos controle total do software.
 
-Nesse curso, iremos utilizar um simulador que utiliza o nosso próprio código VHDL como descrição da CPU (e de tudo envolvido), uma alteração no hardware (VHDL) irá automaticamente alterar o simulador e o comportamento do computador. Para isso, fazemos uso do ModelSim, um software da Mentor Graphics que executa simulaçòes em VHDL (o mesmo utilizado nos projetos anterios), desenvolvemos uma série de APIs e configurações desse simulador para funcionar para a disciplina.
+Percebemos alguns pontos negativos de utilizar um simulador em Java sendo o principal: Qualquer alteração no Hardware iria demandar uma alteração no simulador, sendo necessário mantermos dois projetos independentes e sincronizados.
+
+Nesta versão do curso iremos utilizar um simulador que utiliza o nosso próprio código VHDL como descrição da CPU (e de tudo envolvido), uma alteração no hardware (VHDL) irá automaticamente alterar o simulador e o comportamento do computador. Para isso, fazemos uso do ModelSim, um software da Mentor Graphics que executa simulaçòes em VHDL (o mesmo utilizado nos projetos anterios), desenvolvemos uma série de APIs e configurações desse simulador para funcionar para a disciplina.
 
 > As APIS de interface do simulador foram desenvolvidas por mim (vhdl/ tcl/ python) e a interface gráfica pelo Prof. Eduardo Marossi (python/ qt5). 
 >
@@ -29,11 +30,11 @@ Nesse curso, iremos utilizar um simulador que utiliza o nosso próprio código V
 
 O simulador possui a estrutura ilustrada a seguir:
 
-![Simulador](figs/E-Assembly/simulador.svg)
+![Simulador](figs/F-Assembly/simulador.svg)
 
-O simulador possui como entradas (para cada simulação): a arquitetura do computador (hardware); o conteúdo da memória RAMl o conteúdo da memória ROM e um tempo de execução.
+O simulador possui como entradas (para cada simulação): a arquitetura do computador (hardware); o conteúdo da memória RAM o conteúdo da memória ROM e um tempo de execução.
 
-Após o término da simulação é exportado diversos sinais internos da CPU, o estado final da memória RAM e ROM. Esses sinais são então lidos pela interface gráfica e exibida de uma forma amigável.
+Após o término da simulação é exportado diversos sinais internos da CPU, o estado final da memória RAM e ROM. Esses sinais são então lidos pela interface gráfica e exibida de uma forma amigável, ou usados nos testes.
 
 ## Arquivos
 
@@ -45,7 +46,7 @@ O simulador está localizado nas pastas `Z01-tools/` :
 Para inicializar o simulador basta executar o script localizado na pasta do projeto E:
 
 ``` bash
-.EE-Assembly/Z01simulador.py
+$ python3 Projetos/E-Assembly/Z01simulador.py
 ```
 
 ##EInterface do Simulador 
@@ -119,53 +120,51 @@ Para testarmos esse código será necessário colocarmos valores iniciais na mem
 
 Vamos praticar um pouco agora programar em assembly, no começo parece bem difícil, mas com a prática as coisas vão ficando mais fáceis.
 
-!!! tip 
-    **USE O RESUMO DAS INSTRUÇÕES: [AssemblyZ1](https://insper.github.io/Z01.1/Util-Resumo-Assembly)** para saber as instruções disponíveis.
+Use o resumo das instruções: [AssemblyZ1](https://insper.github.io/Z01.1/Util-Resumo-Assembly) para saber as instruções disponíveis.
 
-
-!!! example "Tarefa 1"
-    - Altere o código para armazenar o resultado no endereço RAM[5]
+!!! example ""
+    Altere o código para armazenar o resultado no endereço RAM[5]
     
-    ??? tip "solução"
-        ```nasm
-        leaw $1,%A
-        movw (%A),%D
-        leaw $0,%A
-        addw (%A), %D, %D
-        leaw $5, %A        ; <- alterado essa linha para 5!
-        movw %D, (%A)
-        ```
+??? tip "Solução"
+    ```nasm
+    leaw $1,%A
+    movw (%A),%D
+    leaw $0,%A
+    addw (%A), %D, %D
+    leaw $5, %A        ; <- alterado essa linha para 5!
+    movw %D, (%A)
+    ```
 
-!!! example "Tarefa 2"
-    - Altere o código para armazenar o negativo da operação entre RAM[0] + RAM[1] no endereço RAM[5] (dica: tem uma operação de `NEG`).
+!!! example ""
+    Altere o código para armazenar o negativo da operação entre RAM[0] + RAM[1] no endereço RAM[5] (dica: tem uma operação de `NEG`).
     
-    ??? tip "solução"
-        ```nasm
-        leaw $1,%A
-        movw (%A),%D
-        leaw $0,%A
-        addw (%A), %D, %D
-        negw %D              ; aqui eu faço %D = - %D
-        leaw $5, %A        
-        movw %D, (%A)
-        ```
+??? tip "solução"
+    ```nasm
+    leaw $1,%A
+    movw (%A),%D
+    leaw $0,%A
+    addw (%A), %D, %D
+    negw %D              ; aqui eu faço %D = - %D
+    leaw $5, %A        
+    movw %D, (%A)
+    ```
     
 ## Script automático de testes
 
-Além da interface gráfica do simulador, possuímos um script de teste automatizado (similar ao do VHDL), esse script: `E-Assembly/testeAssembly.py` compila os códigos que estão na pasta `E-Assembly/src/` para a pasta `E-Assembly/bin/hack` e executa os testes localizados em `E-Assembly/tst/`. Somente os arquivos configurados no `config.txt` serão testados.
+Além da interface gráfica do simulador, possuímos um script de teste automatizado (similar ao do VHDL), esse script: `E-Assembly/testeAssembly.py` compila os códigos que estão na pasta `E-Assembly/src/` para a pasta `E-Assembly/bin/hack` e executa os testes localizados em `E-Assembly/tests/`. Somente os arquivos configurados no `config_testes.txt` serão testados.
 
-### `config.txt`
+### `config_testes.txt`
 
 O arquivo de configuração dos testes é um pouco diferente, possui além do nome do módulo que será testado um segundo parâmetro que indica quantos testes serão executados para esse módulo e quantos microsegundos ele ficará na simulação (microsegundos suposto de um sistema real).
 
-Exemplo do `config.txt`
+Exemplo do `config_testes.txt`
 ```
 # nome | quantidade de testes | us de execucao
 #add 1 1000
 ```
 
 !!! example "Tarefa"
-    - Abra o arquivo `config.txt` e remova o comentário do módulo add
+    - Abra o arquivo `config_testes.txt` e remova o comentário do módulo add
 
 ### Implementando o add.nasm
 
@@ -177,7 +176,7 @@ Os arquivos a serem implementando estão na pasta `E-Assembly/src/` lá você va
 !!! linux "vscode"
     Abra o arquivo `add.nasm` no VsCode.
 
-Agora com o módulo implementando podemos testar seu funcionamento. Para isso execute o script `testeAssembly.py`. Esse script irá compilar o nasm e gerar os arquivos `.hack` e `.mif` (salvos no `/bin/hack/`) que serão carregados no simulador junto com uma configuração inicial da memória RAM (como no gui do simulador), ao término da simulação um arquivo com o estado final da RAM é salvo na pasta `/tests/tst/add/add0_end.mif`.
+Agora com o módulo implementando podemos testar seu funcionamento. Para isso execute o script `testeAssembly.py`. Esse script irá compilar o nasm e gerar os arquivos `.hack` e `.mif` (salvos no `/bin/hack/`) que serão carregados no simulador junto com uma configuração inicial da memória RAM (como no gui do simulador), ao término da simulação um arquivo com o estado final da RAM é salvo na pasta `/tests/add/add0_end.mif`.
 
 Executamos um script que compara o estado final da RAM com o um esperado (`add0_tst.mif`), em caso de algum erro, o scripr irá reportar falha.
 
@@ -194,10 +193,8 @@ Se tudo ocorrer bem você deverá ter a seguinte saída :
  
 ### Implementando outros módulos
 
-Vamos implementar outros módulos: `sub.nasm` e `mov.nasm`. Para cada módulo descomente o teste no `config.txt` e leia o que deve ser feito nos comentários de cada arquivo.
+Vamos implementar outros módulos: `sub.nasm` e `mov.nasm`. Para cada módulo descomente o teste no `config_tests.txt` e leia o que deve ser feito nos comentários de cada arquivo.
 
 !!! example "Tarefa"
     1. Implementar o `sub.nasm` e testar
     1. Implementar o `mov.nasm` e testar
-
-

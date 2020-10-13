@@ -1,5 +1,7 @@
 # jump
 
+Saltos (jumps) são instruções em assembly que permitem a execução não sequêncial de um programa. As instruções de jumpo quando executadas alteram o program counter.
+
 Nossa CPU é capaz de realizar códigos com condição, tal como:
 
 ``` python
@@ -16,34 +18,34 @@ while True:
     b = b+1
 ```
 
-A maneira de realizarmos esse tipo de condição é com instruções de salto (`jump`), uma instrução de salto verifica uma determinada condição e realiza ou não o salto com base nessa condição.
+A maneira de realizarmos esse tipo de condição é com instruções de salto (`jump`), uma instrução de salto verifica uma determinada condição e realiza ou não o salto com base nessa condição, alterando o PC.
 
 ![](figs/Teoria/Z0-nasm-jump.svg)
 
 A sequência de execução do código é ditada pelo Program Counter (PC), um salto acontece quando o PC sofre uma mudança da sua sequência natural:
 
 ```
-              | 
+              | salto
               v
-PC: 0 1 2 3 4 x 8 9 10 11
+PC: 0 1 2 3 4   8 9 10 11
 --------------------------------> tempo
 ```
 
 Essa mudança pode ser tanto para 'frente' quanto para trás:
 
 ```
-              |
+              | salto
               v
-PC: 0 1 2 3 4 x 0 1 2 3 4 x 
+PC: 0 1 2 3 4   0 1 2 3 4 x 
 --------------------------------> tempo
 ```
 
 !!! tip "Salto"
-    O salto é uma interrupção no fluxo contínuo e sequencial de um programa. O salto pode ser condicional (if...) ou incondicional.
+    O salto é uma interrupção no fluxo contínuo e sequencial de um programa. O salto pode ser condicional (if, ...) ou incondicional (salta sem condição).
 
 ## PC
 
-Para executarmos um salto é necessário alterarmos o valor do PC, no Z01 isso é feito utilizando o valor que está salvo no registrador `%A`. No nosso caso, antes de realizarmos um salto é necessário carregarmos em `%A` o endereço da qual desejamos ir caso o salto se realize (condicional). 
+Para executarmos um salto é necessário alterarmos o valor do PC, no Z01 isso é feito utilizando o valor que está salvo no registrador `%A`. No nosso caso, antes de realizarmos um salto é necessário carregarmos em `%A` o endereço da qual desejamos ir caso o salto se realize (condição). 
 
 ![](figs/Teoria/Z0-nasm-pc.png)
 
@@ -61,10 +63,14 @@ O exemplo a seguir realiza um loop infinito (e não faz nada), ele trava nesse l
 
 O PC desse código fica:
 
-```
-    x     x     x     x 
+``` 
+  |     |     |     |
+  v     v     v     v 
 0 1 2 0 1 2 0 1 2 0 1 2
 ```
+
+Note que o PC é incrementado para o valor **2** mesmo após a realização do salto (`jmp`), isso ocorre por um atraso no processamento do salto, é por esse motivo que um salto (de qualquer tipo) **deve ser sempre acompanhado de uma instrução do tipo `nop`**, o `nop` é uma instrução que não realizada nada na CPU, ela é usada para 'dar' tempo a CPU executar o salto.
+
 
 !!! tip ""
     `jmp` é o comando em assembly de salto incondicional.
@@ -85,7 +91,7 @@ Ela serve para 'dar' tempo a CPU para realizar o salto. Como o salto é algo que
 
 ## Salto incondicional 
 
-O salto mais simples que podemos realizar é o salto sem condições. Ou seja, chegou nessa instrução, salta. Isso é muito utilizado para realizarmos `while`, a instrução que realiza o salto é o:
+O salto mais simples que podemos realizar é o salto sem condições. Ou seja, chegou nessa instrução, salta. Isso é muito utilizado para realizarmos `while(True)`, possuimos apenas uma instrução que realiza o salto incodicional:
 
 - `jmp`
 
@@ -110,6 +116,9 @@ O código anterior ficaria o seguinte com uso de label:
 
 === "simulador"
     ![](figs/Teoria/Z0-jmp-loop-label.gif)
+
+!!! note
+    O label não é uma instrução, é um nome para a linha em questão e portanto não é convertido para nenhuma operação de hardware. 
 
 !!! tip
     Teste o código anterior no `Z01-Simulator`.
@@ -140,7 +149,7 @@ O salto condicional é aquele que é utilizado para realizarmos `if ... else`, n
     
     === "nasm" 
     
-          Esse código em assembly seria:
+        Em assembly do Z01:
 
         ```nasm
         leaw $1, %A    ; faz %A apontar para RAM[1]
@@ -174,7 +183,7 @@ O salto condicional é aquele que é utilizado para realizarmos `if ... else`, n
     
 ### Hardware
 
-O salto condicional utiliza do comparador que está dentro da nossa ULA, as etapas são:
+O salto condicional utiliza o comparador que está dentro da nossa ULA para verificar a condição e realizar o salto, as etapas são:
 
 1. O `Control Unit` faz com que o valor do registrador `%D` passe pela ULA 
 1. Quando `%D` sai pela ULA o `Comparador` gera os sinais

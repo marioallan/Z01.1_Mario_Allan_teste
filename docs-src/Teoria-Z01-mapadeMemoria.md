@@ -3,13 +3,13 @@
 !!! success "2020-2"
     Material atualizado.
 
-A forma na qual a maioria dos computadores acessam periféricos (teclado/ mouse/ USB/ tela/ ...) é a do periférico mapeado em memória. Essa técnica utiliza da capacidade do computador de escrever e ler da memória RAM, **fazendo com que regiões de endereços da memória não sejam uma 'memória' física, mas sim um periférico do computador.**
+A forma na qual a maioria das CPUs acessam periféricos (teclado/ mouse/ USB/ tela/ ...) é a do periférico mapeado em memória. Essa técnica utiliza da capacidade do computador de escrever e ler da memória RAM, **fazendo com que regiões de endereços da memória não sejam uma 'memória' física, mas sim um periférico do computador.**
 
 ![](figs/Teoria/Z0-mapa-de-memoria.svg){width=500}
 
 Vamos trabalhar com o exemplo do nosso Z01, a memória é composta de:
 
-- RAM
+- RAM 
 - LCD
 - Chaves
 - LEDs
@@ -30,19 +30,23 @@ Nesse nosso hardware a memória que é visível pela CPU é organizada da seguin
 | ------------------- | -------------------- |                           |
 | 0    -     16383    | RAM                  | r/w                       |
 
-A memória RAM é um componente do computador que permite guardarmos dados voláteis (que vão se perder após o reset do computador), é nela que guardamos as variáveis do programa. Para facilitar a programação e possibilitar que nosso software evolua mais para frente, iremos dar alguns nomes para endereços específicos dessa nossa memória:
+A memória RAM é um componente do computador que permite guardar dados voláteis (que vão se perder após o reset do computador). É nela que guardamos as variáveis do programa. 
 
-| endereço | label / nome |
-|----------|--------------|
-| 0        | SP           |
-| 1        | LCL          |
-| 2        | ARG          |
-| 3        | THIS         |
-| 4        | THAT         |
+!!! note
+    Nossa memória RAM possui 16 bits de largura.
 
-> Nossa memória RAM possui 16 bits de largura.
+A princípio podemos utilizar qualquer endereço da memória RAM para armazenar dados temporários, isso não será verdade mais para frente do curso, onde iremos organizar nossa memória RAM em secções.
 
-A princípio podemos utilizar qualquer endereço da nossa memória RAM para armazenar nossos dados temporários, isso não será verdade mais para frente do curso, onde iremos organizar nossa memória RAM em secções.
+!!! tip
+    Iremos dar alguns nomes para os endereços específicos da memória RAM:
+
+    | endereço | label / nome |
+    |----------|--------------|
+    | 0        | SP           |
+    | 1        | LCL          |
+    | 2        | ARG          |
+    | 3        | THIS         |
+    | 4        | THAT         |
 
 !!! example
     Vamos fazer um exemplo que lê um dado na RAM[3] o incrementa e salva novamente no mesmo endereço de memória:
@@ -70,23 +74,19 @@ A princípio podemos utilizar qualquer endereço da nossa memória RAM para arma
 
 
 !!! tip
-    Execute você esse código no simulador!
+    Execute você esse código no simulador! E analise o resultado.
 
 !!! warning
-    Precisamos notar que a memória RAM não é um registrador e possui uma limitação muito **séria**, não podemos realizar uma ação de ESCRITA E LEITURA no mesmo ciclo! **O que impossibilita de fazermos o seguinte:**
+    É necessário notar que a memória RAM não é um registrador e possui uma **grande limitação**, ==não podemos realizar uma ação de ESCRITA E LEITURA no mesmo ciclo!== O que impossibilita de fazermos o seguinte:
 
     ```nasm
-    leaw $3, %A  ; NÃO PODE!
-    invw (%A)    ; proibido!!
+    leaw $3, %A  
+    incw (%A)              ; Não funciona no nosso hardware!!
+    addw (%A), %D, (%A)    ; Nao funciona no nosso hardware!!
     ```
-
-    Outro tipo de operação que não pode:
-
-    ``` nasm
-    addw (%A), %D, (%A)
-    ```
-
-
+    
+    - O assembly permite que vocês escrevam essas operações, porém quando
+    forem executar no hardware o resultado não vai ser o esperado.
 
 ## LEDs
 
