@@ -2,8 +2,8 @@ site_name: '2020-1 - Elementos de Sistemas - Z01'
 theme:
   name: 'material'
   features:
-    - tabs
-    - instant
+    - navigation.tabs
+    - navigation.instant
   palette:
       primary: 'white'
       accent: 'pink'

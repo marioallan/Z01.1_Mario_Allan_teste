@@ -3,6 +3,44 @@
 !!! success "2020-2"
     Material atualizado.
  
+## Aula 13 - nasm jmp 
+ 
+- Próxima avaliação 30/10
+    - ULA 
+    - Lógica Sequencial
+    - Z01
+    - nasm
+    
+- Expositiva periféricos e jump
+
+Labs:
+    - Lab 11: Assembly
+    - Lab 12: Periféricos 
+    - Lab 13: saltos (jmp) 
+    - Lab 14: praticando nasm 
+ 
+## Aula 12 - 2/10 - Sexta
+
+- Vocês devem trabalhar no grupo no Teams (não vale whatsapp)
+    - iremos começar dar falta para quem não estiver trabalhando em grupo no grupo.
+- Não tem prova durante AI
+    - próxima avaliação (A2): 23/10    SEXTA: HW e SW
+
+- Expositiva (~0h45):
+
+    1. Um pouco sobre memória
+    1. Arquitetura Z01 e introdução assembly
+
+-  Labs e Teoria (~1h15):
+
+> (terminar até nossa próxima aula)
+
+    1. Teoria Z01: https://insper.github.io/Z01.1/Teoria-Z01/
+    1. Teoria Assembly: https://insper.github.io/Z01.1/Teoria-Assembly/
+    1. Lab 11 Assembly: https://insper.github.io/Z01.1/assembly-Lab-1/
+    1. Teoria Mapa de memória: https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/
+    1. Lab 12 Periféricos: https://insper.github.io/Z01.1/assembly-Lab-2/
+
 ## Aula 7
  
 - Explicação pequena CPU
@@ -12,9 +50,9 @@
 
 ## Aula 6 
 
-lab 8
-Terminar lab 6 e 7. 
-Entrega C para terça 
+- Lab 8
+- Terminar lab 6 e 7. 
+- Entrega C para terça 
 
 ## Aula 5
 

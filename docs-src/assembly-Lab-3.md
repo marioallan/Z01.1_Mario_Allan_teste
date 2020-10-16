@@ -1,16 +1,21 @@
-# Lab 13: saltos (jmp)
+# Lab 13: saltos (jump)
 
 Ao final desse lab você deve ser capaz de:
 
-1. Fazer programas complexos em assembly 
+- Escrever programas complexos em assembly que envolvem acesso a memória e saltos (condicionais e incondicionais)
 
 !!! tip
-    Para fazer esse lab, você deve ter lido a teoria sobre [mapa de memória](https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/)
+    Para fazer esse lab, você deve ter lido a teoria sobre:
+    
+    - [mapa de memória](https://insper.github.io/Z01.1/Teoria-Z01-mapadeMemoria/)
+    - [jump](https://insper.github.io/Z01.1/Teoria-nasm-jump/)
 
 !!! note
     Dúvidas sobre assembly? [Z01->Resumo Assembly](https://insper.github.io/Z01.1/Util-Resumo-Assembly/)
 
 Esse lab deve ser feito no Z01Simulador, para abrir o programa basta ==executar o script== `Z01simulador.py` dentro da pasta do projeto `E-Assembly`
+
+## Incondicional
 
 !!! example "jmp1.nasm" 
     - `Projetos/E-Assembly/src/labs/jmp1.nasm`
