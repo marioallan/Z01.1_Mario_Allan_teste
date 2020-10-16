@@ -1,4 +1,4 @@
-# jump
+# ASM - jump
 
 Saltos (jumps) são instruções em assembly que permitem a execução não sequêncial de um programa. As instruções de jumpo quando executadas alteram o program counter.
 

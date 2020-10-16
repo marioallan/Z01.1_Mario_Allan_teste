@@ -1,8 +1,8 @@
-site_name: '2020-1 - Elementos de Sistemas - Z01'
+site_name: 'Elementos de Sistemas'
 theme:
   name: 'material'
   features:
-    - navigation.tabs
+#    - navigation.tabs
     - navigation.instant
   palette:
       primary: 'white'
