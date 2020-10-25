@@ -24,8 +24,7 @@ nav:
   - 'Sobre-Criterios-de-Avaliacao.md'
   - 'Sobre-Rubricas.md'
 
-- Aulas:
-  - 'Util-Aulas.md'
+- 'Util-Aulas.md'
 
 - 'Projetos':
   - 'A-Ambiente-Desenvolvimento-Projeto.md'
@@ -116,8 +115,7 @@ nav:
   - 'Exercicio-CPU-1.md'
   - 'Exercicio-CPU-2.md'
 
-- 'Avaliações':
-    - 'Avaliacoes.md'
+- '20b/simulados.md'
 
 - Útil:
   - 'Util-Comecando-novo-projeto.md'
@@ -130,8 +128,8 @@ nav:
 - História:
   - 'Historia-linux.md'
 
-- Atendimento:
-  - 'Atendimento.md'
+#- Atendimento:
+#  - 'Atendimento.md'
 
 extra_css:
   - css/progress.css

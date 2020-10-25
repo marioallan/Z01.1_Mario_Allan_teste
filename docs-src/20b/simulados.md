@@ -1,0 +1,27 @@
+# Simulados
+
+## AV1
+
+- Parte teórica no blackboard
+- Parte prática no github [20b-ele-simulado-av1]( https://github.com/insper-classroom/20b-ele-simulado-av1)
+
+## AV2
+
+
+
+- Parte teórica no [google forms](https://docs.google.com/forms/d/e/1FAIpQLSeCtVXIBXCKqEem1DujLaT5ScfQsVmvl3o3i8eyGCJSZuvX8g/viewform?usp=sf_link)
+
+- Parte prática no github [20b-ele-av2-simulado](https://github.com/insper-classroom/20b-ele-av2-simulado) 
+
+!!! note "Estudo"
+    -  Projetos:  C - ULA, D - Sequencial, F - Assembly
+    - Labs: 6, 7, 8, 9, 10, 11, 12, 13, 14
+    - Teoria: ULA, Lógica Sequencial, Componentes síncronos, Z01, Assembly, Mapa de memória, jump
+    - Estudo: Lógica Sequencial 1
+
+!!! tip "Soluções AV2"
+
+    - Teórica: vídeos no link: http://54.162.111.146/shared/ele/20b/av2-simulado/
+    - Prática: no branch ["solução"](https://github.com/insper-classroom/20b-ele-av2-simulado/tree/solucao/src) no repositório do simulado.
+   
+
