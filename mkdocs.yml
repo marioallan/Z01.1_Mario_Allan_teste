@@ -18,6 +18,10 @@ repo_url: 'https://github.com/insper/Z01.1'
 
 copyright: 'Copyright &copy; Rafael Corsi @ insper'
 
+google_analytics:
+  - UA-G-XQ38NZ62XF
+  - auto
+
 nav:
 - Home:
   - 'index.md'
