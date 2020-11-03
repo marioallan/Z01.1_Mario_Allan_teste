@@ -18,5 +18,3 @@ Toda vez que um novo projeto começar será necessário realizar algumas configu
 
 !!! warning
     Não seguir sem realizar a etapa anterior.
-
-> [SEGUIR PARA A PRIMEIRA PARTE](assembler-Lab-1-parte-1)

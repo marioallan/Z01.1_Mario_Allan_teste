@@ -1,4 +1,4 @@
-# LAB 16: parte 1
+# parte 1
 
 Agora iremos desenvolver um programa em java que será capaz de ler nossos programas  `.nasm` e converter eles para `.hack` (binário). Nosso arquivo `.hack` é um arquivo de **texto** que possui apenas `1`s e `0`s. Cada linha desse arquivo `.hack` é uma instrução a ser armazenada na memória ROM e executado pela CPU.
 

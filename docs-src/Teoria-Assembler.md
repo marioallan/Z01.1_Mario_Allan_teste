@@ -17,13 +17,18 @@
 
     > https://en.wikipedia.org/wiki/Grace_Hopper
     
-Linguagens Assembly são as representações simbólicas dos comandos binários do computador (linguagem de máquina), facilitando o desenvolvimento de programas. Essa é uma linguagem que chamamos de baixo nível, ou seja, ela não é tão sofisticada como uma linguagem C onde as instruções são mais poderosas, mas não tem uma mapeamento direto para o hardware. ou seja, em geral instruções Assembly são convertidas diretamente para uma instrução de linguagem de máquina. Podemos dizer que é um mapeamento um para um, assim cada instrução Assembly vira uma instrução de máquina.
+Linguagens Assembly são as representações simbólicas dos comandos binários do computador (linguagem de máquina), facilitando o desenvolvimento de programas. Essa é uma linguagem que chamamos de baixo nível, ou seja, ela não é tão sofisticada como uma linguagem Java onde os comandos abstraem o hardware, e não possuem uma relação direta com o hardware. Em geral instruções Assembly são convertidas diretamente para uma instrução de linguagem de máquina. 
+
+Podemos dizer que é um mapeamento um para um, assim cada instrução Assembly vira uma instrução de máquina.
 
 ## O que um assembler faz?
 
 ![](figs/Teoria/Assembler-assembler.svg)
 
-As CPUs tem suas linguagens máquinas, que são descritas pelas sequências de bits, ou seja, seus 0s e 1s. O assembly é um formalismo que permite a criação dos programas em uma linguagem mais humanamente tratável, porém os computadores não conseguem executar diretamente esse tipo de instrução, uma série de tratamentos e conversões são necessárias e o que o Assembler faz é justamente traduzir essa linguagem de mnemônicos para os códigos binários da arquitetura em questão, ou seja, os 0s e 1s que o computador consegue diretamente executar.
+!!! info "Assembler"
+    Em português é conhecido como **montador**.
+
+ As CPUs tem suas linguagens máquinas, que são descritas pelas sequências de bits, ou seja, seus `0`s e `1`s. O assembly é um formalismo que permite a criação dos programas em uma linguagem mais humanamente tratável, porém os computadores não conseguem executar diretamente esse tipo de instrução, uma série de tratamentos e conversões são necessárias e o que o Assembler faz é justamente traduzir essa linguagem de mnemônicos para os códigos binários da arquitetura em questão, ou seja, os `0`s e `1`s que o computador consegue diretamente executar.
 
 !!! tip
     Os Assemblers presentes nos sistemas operacionais disponíveis são normalmente o NASM para a sintaxe intel e o GAS para a sintaxe AT&T, mas podem haver variações.
