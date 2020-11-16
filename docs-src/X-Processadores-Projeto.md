@@ -10,16 +10,18 @@
 Esse projeto extra optativo (individual) fornece **15 pontos** 
 extras de **Hardware** e **15 pontos extras** de **Software**. 
 
-## Processadores
+## (10 SW/ 10 HW) Processadores
 
 Você deverá escolher um dos processadores listados a seguir:
 
--  [ARM Cortex M0](https://en.wikipedia.org/wiki/ARM_Cortex-M)
--  [RISC V](https://en.wikipedia.org/wiki/RISC-V)
--  [SPARC V8](https://en.wikipedia.org/wiki/SPARC)
--  [AVR](https://www.google.com/search?q=avr+microcontroller+wiki)
--  [Microchip PIC ](https://en.wikipedia.org/wiki/PIC_microcontrollers)
--  [PowerPC](https://en.wikipedia.org/wiki/PowerPC)
+- [ARM Cortex M0](https://en.wikipedia.org/wiki/ARM_Cortex-M)
+- [RISC V](https://en.wikipedia.org/wiki/RISC-V)
+- [AVR](https://www.google.com/search?q=avr+microcontroller+wiki)
+- [Microchip PIC ](https://en.wikipedia.org/wiki/PIC_microcontrollers)
+- [PowerPC](https://en.wikipedia.org/wiki/PowerPC)
+- [SPARC V8](https://en.wikipedia.org/wiki/SPARC)
+- [ZIP CPU](https://zipcpu.com/)
+- [OpenRISC](https://openrisc.io/)
 
 !!! warning 
     Não pode repetir dentro do grupo!
