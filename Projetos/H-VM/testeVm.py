@@ -61,7 +61,7 @@ if __name__ == "__main__":
         gui = False
 
     pwd = os.path.dirname(os.path.abspath(__file__))
-    testDir = pwd+"/tests/"
+    testDir = pwd + "/"
     vmDir = [pwd+"/src/vm/", pwd+"/src/vmExamples/"]
 
     vmDir = [pwd+"/src/vm/", ""]
