@@ -1,9 +1,9 @@
-# Lab 17 - vm
+# Lab 17: vm
 
 !!! tip
-    Realizar o laboratório individualmente.
+    Realizar o laboratório individualmente. Mas trabalhar no grupo e trocar ideias.
 
-Nesse lab iremos criar programas em VM para o nosso Z01.1, essa entrega é individual e não vale nota, mas será cobrado em prova e servirá para vocês entenderem o próximo projeto: `I-VMTranslator`, assim como este conteúdo será cobrado na ultima avaliação.
+Nesse lab iremos criar programas em VM para o nosso Z01.1, essa entrega é individual e não vale nota, mas será cobrado na última avaliação.
 
 Esse laboratório mistura exercícios com leitura de teoria, é essencial que você realize as leituras recomendadas para cada secção e então voltar para fazer os exercícios. 
 
