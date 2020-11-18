@@ -7,10 +7,7 @@
 
 ## AV2
 
-
-
 - Parte teórica no [google forms](https://docs.google.com/forms/d/e/1FAIpQLSeCtVXIBXCKqEem1DujLaT5ScfQsVmvl3o3i8eyGCJSZuvX8g/viewform?usp=sf_link)
-
 - Parte prática no github [20b-ele-av2-simulado](https://github.com/insper-classroom/20b-ele-av2-simulado) 
 
 !!! note "Estudo"
@@ -24,4 +21,17 @@
     - Teórica: vídeos no link: http://54.162.111.146/shared/ele/20b/av2-simulado/
     - Prática: no branch ["solução"](https://github.com/insper-classroom/20b-ele-av2-simulado/tree/solucao/src) no repositório do simulado.
    
+## AV3
 
+- Parte teórica estudar pelos labs:
+    - https://insper.github.io/Z01.1/Exercicio-CPU-1/
+    - https://insper.github.io/Z01.1/Exercicio-CPU-2/
+- Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado) 
+
+!!! note "Estudo"
+    - Projetos: F-CPU e G-Assembler
+    - Labs: 15 e 16
+    - Teoria: Linguagem de máquina, Assembler, Tabela de Símbolos 
+    - Estudo: Linguagem de máquina 1, CPU 1, CPU 2
+    
+    
