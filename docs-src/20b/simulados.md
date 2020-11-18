@@ -1,11 +1,23 @@
-# Simulados
+# Avaliações / Simulados
+
+
 
 ## AV1
+
+|         | HW | SW |
+|---------|----|----|
+| Teórica | 30 |    |
+| Prática | 20 | 0  |
 
 - Parte teórica no blackboard
 - Parte prática no github [20b-ele-simulado-av1]( https://github.com/insper-classroom/20b-ele-simulado-av1)
 
 ## AV2
+
+|         | HW | SW |
+|---------|----|----|
+| Teórica | 25 | 10 |
+| Prática | 10 | 37 |
 
 - Parte teórica no [google forms](https://docs.google.com/forms/d/e/1FAIpQLSeCtVXIBXCKqEem1DujLaT5ScfQsVmvl3o3i8eyGCJSZuvX8g/viewform?usp=sf_link)
 - Parte prática no github [20b-ele-av2-simulado](https://github.com/insper-classroom/20b-ele-av2-simulado) 
@@ -23,6 +35,11 @@
    
 ## AV3
 
+|         | HW | SW |
+|---------|----|----|
+| Teórica | 10 | 25 |
+| Prática | 15 |    |
+
 - Parte teórica estudar pelos labs:
     - https://insper.github.io/Z01.1/Exercicio-CPU-1/
     - https://insper.github.io/Z01.1/Exercicio-CPU-2/
@@ -35,3 +52,9 @@
     - Estudo: Linguagem de máquina 1, CPU 1, CPU 2
     
     
+## AV4
+
+|         | HW | SW |
+|---------|----|----|
+| Teórica | 10 | 15 |
+| Prática |    | 33 |
