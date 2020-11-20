@@ -1,6 +1,6 @@
 # Avaliações / Simulados
 
-
+Página com 
 
 ## AV1
 
@@ -51,10 +51,18 @@
     - Teoria: Linguagem de máquina, Assembler, Tabela de Símbolos 
     - Estudo: Linguagem de máquina 1, CPU 1, CPU 2
     
-    
 ## AV4
 
 |         | HW | SW |
 |---------|----|----|
 | Teórica | 10 | 15 |
 | Prática |    | 33 |
+
+- Parte teórica estudar: [Exercício VM](https://docs.google.com/spreadsheets/d/1dywPIHgpUztDtpqzuEuGzAuTlcK9ryVUTp9-b84stJ4/edit?usp=sharing)
+- Parte prática no github [20a-ele-av4-simulado](https://github.com/Insper/2020a-Elementos-AV4-Simulado)
+
+!!! note "Estudo"
+    - Projetos: ---
+    - Labs: 17 e 18
+    - Teoria: **Aritmética binária**, VM e VMtranslator
+    - Estudo: [Exercício VM](https://docs.google.com/spreadsheets/d/1dywPIHgpUztDtpqzuEuGzAuTlcK9ryVUTp9-b84stJ4/edit?usp=sharing)
