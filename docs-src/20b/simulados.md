@@ -1,6 +1,6 @@
 # Avaliações / Simulados
 
-Página com 
+Página com resumo das avaliações e seus simulados
 
 ## AV1
 
@@ -43,7 +43,9 @@ Página com
 - Parte teórica estudar pelos labs:
     - https://insper.github.io/Z01.1/Exercicio-CPU-1/
     - https://insper.github.io/Z01.1/Exercicio-CPU-2/
-- Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado) 
+- ~Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado)~
+
+
 
 !!! note "Estudo"
     - Projetos: F-CPU e G-Assembler
@@ -57,6 +59,10 @@ Página com
 |---------|----|----|
 | Teórica | 10 | 15 |
 | Prática |    | 33 |
+
+Essa avaliação vai ser basicamente sobre VM com algumas questões extras de Lógica Booleana e de Assembly (com objetivo de consolidar o aprendizado).
+
+Para estudar:
 
 - Parte teórica estudar: [Exercício VM](https://docs.google.com/spreadsheets/d/1dywPIHgpUztDtpqzuEuGzAuTlcK9ryVUTp9-b84stJ4/edit?usp=sharing)
 - Parte prática no github [20a-ele-av4-simulado](https://github.com/Insper/2020a-Elementos-AV4-Simulado)
