@@ -37,13 +37,12 @@ Página com resumo das avaliações e seus simulados
 
 |         | HW | SW |
 |---------|----|----|
-| Teórica | 10 | 25 |
-| Prática | 15 |    |
+| Teórica | 25 | 25 |
 
 - Parte teórica estudar pelos labs:
     - https://insper.github.io/Z01.1/Exercicio-CPU-1/
     - https://insper.github.io/Z01.1/Exercicio-CPU-2/
-- ~Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado)~
+- ~~Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado)~~
 
 
 
