@@ -18,15 +18,11 @@ Para cada modificação faça o desenho da nova CPU.
 
 ## Extras
 
-### `nop`
+!!! example "extra-1"
+    Como o controlUnit controla a CPU para realizar a operação de NOP?
 
-Como o controlUnit controla a CPU para realizar a operação de NOP?
+!!! example "extra-2"
+    Nossa CPU suportaria executar simultaneamente a instrução `movw %D, %A` e ao mesmo tempo a instrução `jg %D`? 
 
-### `movw %D, %A e jg %D` ao mesmo tempo
-
-Nossa CPU suportaria executar simultaneamente a instrução `movw %D, %A` e ao mesmo tempo a instrução `jg %D`? 
-
-### `loadPC`
-
-Quais sinais o influenciam?
-
+!!! example "extra-3"
+    Quais sinais influenciam o loadPC?
