@@ -64,7 +64,8 @@ Essa avaliação vai ser basicamente sobre VM com algumas questões extras de L�
 Para estudar:
 
 - Parte teórica estudar: [Exercício VM](https://docs.google.com/spreadsheets/d/1dywPIHgpUztDtpqzuEuGzAuTlcK9ryVUTp9-b84stJ4/edit?usp=sharing)
-- Parte prática no github [20a-ele-av4-simulado](https://github.com/Insper/2020a-Elementos-AV4-Simulado)
+- Parte prática no github [20a-ele-av4-simulado](https://github.com/insper-classroom/20b-ele-av4-simulado)
+    - solução no branch [SOLUCAO](https://github.com/insper-classroom/20b-ele-av4-simulado/tree/SOLUCAO)
 
 !!! note "Estudo"
     - Projetos: ---
