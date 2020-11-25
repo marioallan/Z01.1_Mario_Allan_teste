@@ -39,18 +39,16 @@ Página com resumo das avaliações e seus simulados
 |---------|----|----|
 | Teórica | 25 | 25 |
 
-- Parte teórica estudar pelos labs:
-    - https://insper.github.io/Z01.1/Exercicio-CPU-1/
-    - https://insper.github.io/Z01.1/Exercicio-CPU-2/
+<!--
+- Parte teórica estudar pelos labs: 15 e 16
 - ~~Parte prática no github [20b-ele-av3-simulado](https://github.com/insper-classroom/20b-ele-av3-simulado)~~
-
-
+-->
 
 !!! note "Estudo"
     - Projetos: F-CPU e G-Assembler
     - Labs: 15 e 16
     - Teoria: Linguagem de máquina, Assembler, Tabela de Símbolos 
-    - Estudo: Linguagem de máquina 1, CPU 1, CPU 2
+    - Estudo: [Linguagem de máquina 1](https://forms.gle/6jNZR4CAELJ69ZjXA), [CPU 1](https://insper.github.io/Z01.1/Exercicio-CPU-1/), [CPU 2](https://insper.github.io/Z01.1/Exercicio-CPU-2/)
     
 ## AV4
 
