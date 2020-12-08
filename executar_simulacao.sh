@@ -8,7 +8,7 @@ export VUNIT_MODELSIM_PATH=$HOME/modelsim_ase/bin/
 ###############################################
 #script:
   ## Instal Z01.1 tools
-  #bash updateZ01tools.sh
+# bash updateZ01tools.sh
 
   ## run scripts
   #python3 Projetos/A-AmbienteDesenvolvimento/testeAmbienteDesenvolvimento.py
