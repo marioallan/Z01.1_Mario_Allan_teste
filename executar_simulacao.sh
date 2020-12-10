@@ -16,6 +16,6 @@ export VUNIT_MODELSIM_PATH=$HOME/modelsim_ase/bin/
   #python3 Projetos/B-LogicaCombinacional/testeLogicaCombinacional.py 
   #python3 Verilog/exemplos_system_verilog/run.py
   #python3 Verilog/exemplos_verilog/run.py
-  #python3 VHDL/exemplos_vhdl/run.py
-  python3 VHDL/neander/run_sem_arquivo_mif.py
+  python3 VHDL/exemplos_vhdl/run.py
+  #python3 VHDL/neander/run_sem_arquivo_mif.py
   python3 VHDL/neander/run_com_arquivo_mif.py
