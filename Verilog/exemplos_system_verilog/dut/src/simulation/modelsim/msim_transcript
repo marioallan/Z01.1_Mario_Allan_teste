@@ -1,0 +1,373 @@
+# do dut_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying /home/mario/altera/14.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /home/mario/altera/14.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+/home/mario/virtualenv/Z01.1_Mario_Allan_teste/Verilog/exemplos_system_verilog/dut/src {/home/mario/virtualenv/Z01.1_Mario_Allan_teste/Verilog/exemplos_system_verilog/dut/src/dut.sv}
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:12:39 on Dec 17,2020
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/mario/virtualenv/Z01.1_Mario_Allan_teste/Verilog/exemplos_system_verilog/dut/src" /home/mario/virtualenv/Z01.1_Mario_Allan_teste/Verilog/exemplos_system_verilog/dut/src/dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:12:39 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+ls
+# dut_run_msim_rtl_verilog.do
+# dut_run_msim_rtl_verilog.do.bak
+# dut_run_msim_rtl_verilog.do.bak1
+# dut_run_msim_rtl_verilog.do.bak2
+# modelsim.ini
+# msim_transcript
+# rtl_work
+# vsim.wlf
+pwd
+# /home/mario/virtualenv/Z01.1_Mario_Allan_teste/Verilog/exemplos_system_verilog/dut/src/simulation/modelsim
+ls
+# dut_run_msim_rtl_verilog.do
+# dut_run_msim_rtl_verilog.do.bak
+# dut_run_msim_rtl_verilog.do.bak1
+# dut_run_msim_rtl_verilog.do.bak2
+# modelsim.ini
+# msim_transcript
+# rtl_work
+# simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# test_bench_dut.sv
+# test_bench_dut.sv.bak
+# vsim.wlf
+# wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:13:38 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../src/dut.sv 
+# ** Error: (vlog-7) Failed to open design unit file "../src/dut.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 16:13:38 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /home/mario/altera/14.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 7
+# /home/mario/altera/14.1/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work ../src/dut.sv"
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:14:29 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:14:29 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:14:29 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# ** Error: test_bench_dut.sv(10): near ")": syntax error, unexpected ')', expecting .* or '.'
+# End time: 16:14:29 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /home/mario/altera/14.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 9
+# /home/mario/altera/14.1/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -work work -sv test_bench_dut.sv"
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:14:45 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:14:45 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:14:45 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 16:14:45 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -i -l msim_transcript -do "dut_run_msim_rtl_verilog.do" 
+# Start time: 16:14:45 on Dec 17,2020
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.dut
+# ** Warning: (vsim-3839) test_bench_dut.sv(33): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(32): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(31): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(30): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(29): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(28): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mario  Hostname: inova-ifsc-notebook  ProcessID: 4700
+#           Attempting to use alternate WLF file "./wlftileXi4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftileXi4
+# ** Error: (vish-4014) No objects found matching '/tb/DUT/a'.
+# Executing ONERROR command at macro ./wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 4
+# ** Error: (vish-4014) No objects found matching '/tb/DUT/b'.
+# Executing ONERROR command at macro ./wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 5
+# ** Error: (vish-4014) No objects found matching '/tb/DUT/c'.
+# Executing ONERROR command at macro ./wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 8
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: $stop    : test_bench_dut.sv(39)
+#    Time: 1400 ps  Iteration: 0  Instance: /tb
+# Break in Module tb at test_bench_dut.sv line 39
+# Simulation Breakpoint: Break in Module tb at test_bench_dut.sv line 39
+# MACRO ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do PAUSED at line 17
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:15:59 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:15:59 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:15:59 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 16:15:59 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim 
+# Start time: 16:15:59 on Dec 17,2020
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.dut
+# ** Warning: (vsim-3839) test_bench_dut.sv(33): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(32): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(31): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(30): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(29): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(28): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mario  Hostname: inova-ifsc-notebook  ProcessID: 4700
+#           Attempting to use alternate WLF file "./wlft2rBi8F".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft2rBi8F
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: $stop    : test_bench_dut.sv(39)
+#    Time: 1400 ps  Iteration: 0  Instance: /tb
+# Break in Module tb at test_bench_dut.sv line 39
+# Simulation Breakpoint: Break in Module tb at test_bench_dut.sv line 39
+# MACRO ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do PAUSED at line 17
+ls
+# dut_run_msim_rtl_verilog.do
+# dut_run_msim_rtl_verilog.do.bak
+# dut_run_msim_rtl_verilog.do.bak1
+# dut_run_msim_rtl_verilog.do.bak2
+# modelsim.ini
+# msim_transcript
+# rtl_work
+# simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do.bak
+# test_bench_dut.sv
+# test_bench_dut.sv.bak
+# vsim.wlf
+# wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# wave_simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do.bak
+# wlft2rBi8F
+# wlftileXi4
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:16:13 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:16:13 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:16:13 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 16:16:13 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim 
+# Start time: 16:16:14 on Dec 17,2020
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.dut
+# ** Warning: (vsim-3839) test_bench_dut.sv(33): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(32): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(31): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(30): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(29): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(28): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mario  Hostname: inova-ifsc-notebook  ProcessID: 4700
+#           Attempting to use alternate WLF file "./wlft0QzWET".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft0QzWET
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: $stop    : test_bench_dut.sv(39)
+#    Time: 1400 ps  Iteration: 0  Instance: /tb
+# Break in Module tb at test_bench_dut.sv line 39
+# Simulation Breakpoint: Break in Module tb at test_bench_dut.sv line 39
+# MACRO ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do PAUSED at line 17
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:19:36 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:19:37 on Dec 17,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:19:37 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# ** Error: test_bench_dut.sv(28): (vlog-2110) Illegal reference to net "x".
+# ** Error: test_bench_dut.sv(29): (vlog-2110) Illegal reference to net "x".
+# ** Error: test_bench_dut.sv(30): (vlog-2110) Illegal reference to net "x".
+# ** Error: test_bench_dut.sv(31): (vlog-2110) Illegal reference to net "x".
+# ** Error: test_bench_dut.sv(32): (vlog-2110) Illegal reference to net "x".
+# ** Error: test_bench_dut.sv(33): (vlog-2110) Illegal reference to net "x".
+# End time: 16:19:37 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: /home/mario/altera/14.1/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do line 9
+# invalid command name "vsim_increment_error_count"
+#     while executing
+# "::tcl_unknown vsim_increment_error_count"
+#     ("uplevel" body line 1)
+#     invoked from within
+# "uplevel 1 ::tcl_unknown $args"
+do simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do
+# ** Warning: (vlib-34) Library already exists at "rtl_work".
+# Model Technology ModelSim LE vmap 10.3c Lib Mapping Utility 2014.09 Sep 20 2014
+# vmap -modelsim_quiet work rtl_work 
+# Modifying modelsim.ini
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:20:03 on Dec 17,2020
+# vlog -reportprogress 300 -work work ../../dut.sv 
+# -- Compiling module dut
+# 
+# Top level modules:
+# 	dut
+# End time: 16:20:03 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+# Start time: 16:20:03 on Dec 17,2020
+# vlog -reportprogress 300 -work work -sv test_bench_dut.sv 
+# -- Compiling module tb
+# 
+# Top level modules:
+# 	tb
+# End time: 16:20:03 on Dec 17,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim 
+# Start time: 16:20:03 on Dec 17,2020
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.dut
+# ** Warning: (vsim-3839) test_bench_dut.sv(33): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(32): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(31): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(30): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(29): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Warning: (vsim-3839) test_bench_dut.sv(28): Variable '/tb/x', driven via a port connection, is multiply driven. See test_bench_dut.sv(7).
+#         Region: /tb
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: mario  Hostname: inova-ifsc-notebook  ProcessID: 4700
+#           Attempting to use alternate WLF file "./wlftXAKn0V".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftXAKn0V
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Note: $stop    : test_bench_dut.sv(39)
+#    Time: 1400 ps  Iteration: 0  Instance: /tb
+# Break in Module tb at test_bench_dut.sv line 39
+# Simulation Breakpoint: Break in Module tb at test_bench_dut.sv line 39
+# MACRO ./simulacao_verilog_exemplo_com_arquivo_test_bench_dut_v.do PAUSED at line 17
+# FATAL ERROR: Unable to read lock file necessary for use of uncounted nodelocked license. Exiting.

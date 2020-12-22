@@ -20,7 +20,7 @@ VU.add_verification_components()
 
 SRC_PATH = Path(__file__).parent 
 
-VU.add_library("vhdl_lib_src").add_source_files(SRC_PATH / "src" / "*.vhd")
-VU.add_library("vhdl_lib").add_source_files(SRC_PATH / "test" / "*.vhd")
+VU.add_library("neander_lib").add_source_files(SRC_PATH / "src" / "*.vhd")
+VU.add_library("tb_neander_lib").add_source_files(SRC_PATH / "test" / "*.vhd")
 
 VU.main()

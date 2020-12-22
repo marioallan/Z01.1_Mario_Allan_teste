@@ -31,8 +31,8 @@ source = SRC_PATH / "mif" / "programa_que_compara_tres_valores_e_informa_o_maior
 #destination = "/home/mario/virtualenv/Z01.1_Mario_Allan_teste/vunit_out/modelsim"
 destination = SRC_PATH / ".." / ".." / "vunit_out" / "modelsim"
 
-VU.add_library("vhdl_lib_src").add_source_files(SRC_PATH / "src" / "*.vhd")
-VU.add_library("vhdl_lib").add_source_files(SRC_PATH / "test" / "*.vhd")
+VU.add_library("neander_lib").add_source_files(SRC_PATH / "src" / "*.vhd")
+VU.add_library("tb_neander_lib").add_source_files(SRC_PATH / "test" / "*.vhd")
 
 shutil.copy(source, destination)
 

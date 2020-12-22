@@ -1,20 +1,22 @@
-
-//`timescale 1ps / 1ps
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this file,
+// You can obtain one at http://mozilla.org/MPL/2.0/.
+//
+// Copyright (c) 2014-2020, Lars Asplund lars.anders.asplund@gmail.com
 
 `include "vunit_defines.svh"
 
-module tb; 
-
-`TEST_SUITE begin
-
+module tb_dut; 
+ 
   reg x; 
-  reg y; 
-  wire z; 
-  and_verilog DUT (
-      .a (x),
-      .b (y),
-      .c (z) 
+  reg y;
+  
+  dut DUT (
+		.vint (x),
+      .vout (y)
+     
 	); 
+	
 	// Para gerar o testbench.v
 	// Apos executar a analise e sintese no quartus
 	// Simular o projeto com o ModelSim > Clicar com o botao direito do mouse no projeto carregado
@@ -30,44 +32,33 @@ module tb;
 
 // "Constant Pattern"
 // Start Time = 0 ps, End Time = 1 ns, Period = 0 ps
-
-
-
- // initial
-  //begin
-  
-   //`TEST_CASE("test_AND_com_NOT") begin
-	$display("Iniciando Teste");
+  initial
+  begin
 	 x = 1'b0;
-	 y = 1'b0;
-	`CHECK_EQUAL(z, 1);
-	//end
-	
-	//#100 x = 1'b1;
-	
-	// #100 x = 1'b0;
-	// #100 x = 1'b1;
-	// #500 x = 1'b0;
-	// #200 x = 1'b1;
+//	 #100 x = 1'b1;
+//	 #100 x = 1'b0;
+//	 #100 x = 1'b1;
+//	 #500 x = 1'b0;
+//	 #200 x = 1'b1;
 // dumped values till 1 ns
-  //end
+  end
 
+  initial
+	#1400 $stop;
 
-// "Constant Pattern"
-// Start Time = 0 ps, End Time = 1 ns, Period = 0 ps
   
-  //initial
- // begin
-	 //y = 1'b1;
-	 //#200 y = 1'b0;
-	 //#300 y = 1'b1;
-// dumped values till 1 ns
-  //end
 
-  //initial
-	//#1400 $stop;
+   `TEST_SUITE begin
 	
-	//end
+      `TEST_CASE("Test that pass") begin
+         @(y);
+         `CHECK_EQUAL(y, 0);
+      end
+		
+      `TEST_CASE("Test that fail") begin
+         @(y);
+         `CHECK_EQUAL(y, 1);
+      end
 
-end;
+	end
 endmodule

@@ -18,7 +18,7 @@ from vunit.verilog import VUnit
 SRC_PATH = Path(__file__).parent
 
 VU = VUnit.from_argv()
-VU.add_library("verilog_lib_src").add_source_files(SRC_PATH / "src" / "*.sv")
-VU.add_library("verilog_lib").add_source_files(SRC_PATH / "test" / "*.sv")
+VU.add_library("and_lib").add_source_files(SRC_PATH / "src" / "*.sv")
+VU.add_library("tb_and_lib").add_source_files(SRC_PATH / "test" / "*.sv")
 
 VU.main()
