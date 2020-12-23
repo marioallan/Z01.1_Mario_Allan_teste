@@ -59,10 +59,10 @@ module tb_and_verilog;
          `CHECK_EQUAL(z, 0);
       end
 		
-      `TEST_CASE("Test that fail") begin
-         @(z);
-         `CHECK_EQUAL(z, 1);
-      end
+//      `TEST_CASE("Test that fail") begin
+//         @(z);
+//         `CHECK_EQUAL(z, 1);
+//      end
 
 	end
 endmodule
