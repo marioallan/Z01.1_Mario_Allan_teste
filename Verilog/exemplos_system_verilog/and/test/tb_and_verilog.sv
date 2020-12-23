@@ -54,15 +54,15 @@ module tb_and_verilog;
 
    `TEST_SUITE begin
 	
-      `TEST_CASE("Test that pass") begin
-         @(z);
-         `CHECK_EQUAL(z, 0);
-      end
-		
-//      `TEST_CASE("Test that fail") begin
+//      `TEST_CASE("Test that pass") begin
 //         @(z);
-//         `CHECK_EQUAL(z, 1);
+//         `CHECK_EQUAL(z, 0);
 //      end
+		
+      `TEST_CASE("Test that fail") begin
+         @(z);
+         `CHECK_EQUAL(z, 1);
+      end
 
 	end
 endmodule
